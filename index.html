@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JobFilter — Stitch 화면 둘러보기</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter,+Pretendard,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{"primary":"#00234d","primary-container":"#14396b","secondary":"#0058bb","paper-bg":"#F5F7FA","surface":"#FFFFFF","surface-container":"#e5eeff","surface-container-low":"#eff4ff","on-surface":"#131c28","slate-muted":"#5B6472","match-green":"#16A34A","hairline-border":"#E3E8EF"}}}};</script>
+<style>body{font-family:"Pretendard","Inter",sans-serif}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#c3c6d0;border-radius:8px}</style>
+</head>
+<body class="bg-paper-bg text-on-surface min-h-screen">
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur border-b border-hairline-border">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-primary-container text-white flex items-center justify-center font-black">J</div>
+      <div class="leading-tight">
+        <div class="font-bold text-primary text-lg">JobFilter</div>
+        <div class="text-xs text-slate-muted">Stitch 화면 프로토타입 런처</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-semibold hover:bg-surface transition-colors">SPA 버전 (index.html)</a>
+      <a href="../DESIGN.md" class="px-3 py-1.5 rounded-lg text-slate-muted hover:text-primary transition-colors">DESIGN.md</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-6 py-10">
+  <h1 class="text-2xl font-extrabold text-primary tracking-tight">화면 목록 <span class="text-sm font-medium text-slate-muted align-middle ml-2">클릭하면 해당 화면으로 이동 · 사이드바/탭으로 화면 간 이동 가능</span></h1>
+
+  <h2 class="mt-8 mb-3 text-sm font-bold text-slate-muted uppercase tracking-wider">학생 포털</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <a href="S-01.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-01.png" alt="S-01" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-01 학생 대시보드 <span class="text-xs font-normal text-slate-muted">F-10</span></div><div class="text-xs text-slate-muted mt-1">지원 현황 요약 · 마감 임박 · 맞춤 추천</div></div>
+    </a>
+    <a href="S-02.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-02.png" alt="S-02" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-02 공고 목록 <span class="text-xs font-normal text-slate-muted">F-11·F-13</span></div><div class="text-xs text-slate-muted mt-1">검색 · 필터 칩 · 정렬 · 매칭 점수 · 스크랩</div></div>
+    </a>
+    <a href="S-03.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-03.png" alt="S-03" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-03 공고 상세 <span class="text-xs font-normal text-slate-muted">F-12</span></div><div class="text-xs text-slate-muted mt-1">프로필 대조 매칭 분석 · 스크랩 · 칸반 등록</div></div>
+    </a>
+    <a href="S-04.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-04.png" alt="S-04" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-04 자소서 코칭 <span class="text-xs font-normal text-slate-muted">F-15~17·F-28·F-66</span></div><div class="text-xs text-slate-muted mt-1">7개 가중치 진단 · 작성 가이드 · 키워드 히트맵</div></div>
+    </a>
+    <a href="S-05.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-05.png" alt="S-05" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-05 지원 관리 칸반 <span class="text-xs font-normal text-slate-muted">F-14</span></div><div class="text-xs text-slate-muted mt-1">6단계 칸반 · <b class="text-match-green">카드 드래그 이동 가능</b></div></div>
+    </a>
+    <a href="S-09.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-09.png" alt="S-09" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-09 규칙 기반 모의면접</div><div class="text-xs text-slate-muted mt-1">타이머 · 셀프 체크리스트 · CSV 내보내기</div></div>
+    </a>
+  </div>
+
+  <h2 class="mt-10 mb-3 text-sm font-bold text-slate-muted uppercase tracking-wider">기업 · 관리자 · 모바일</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <a href="S-06.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-06.png" alt="S-06" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-06 기업 공고 관리 <span class="text-xs font-normal text-slate-muted">F-31~33</span></div><div class="text-xs text-slate-muted mt-1">공고 테이블 · 단건 등록 모달 · 엑셀 일괄 업로드</div></div>
+    </a>
+    <a href="S-07.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-07.png" alt="S-07" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-07 관리자 대시보드 <span class="text-xs font-normal text-slate-muted">F-41~45</span></div><div class="text-xs text-slate-muted mt-1">승인 큐 · 키워드 사전 · 업로드 로그</div></div>
+    </a>
+    <a href="S-08.html" class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-hairline-border">
+      <div class="aspect-video bg-surface-container-low overflow-hidden"><img src="S-08.png" alt="S-08" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform"/></div>
+      <div class="p-4"><div class="font-bold text-primary">S-08 모바일 뷰 <span class="text-xs font-normal text-slate-muted">N-06</span></div><div class="text-xs text-slate-muted mt-1">하단 탭 바 · 압축형 공고 카드</div></div>
+    </a>
+  </div>
+
+  <div class="mt-12 p-5 rounded-xl bg-surface-container-low text-sm text-slate-muted leading-relaxed">
+    <b class="text-primary">팁:</b> 각 화면은 <code class="bg-surface px-1 rounded">app.js</code> 공통 레이어로 연결되어 있습니다.
+    사이드바 내비게이션으로 화면을 오갈 수 있고, S-05 칸반 카드는 드래그로 단계 이동, S-04는 실시간 코칭 점수가 계산됩니다.
+  </div>
+</main>
+</body></html>

@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "slate-muted": "#5B6472",
+          "outline-variant": "#c3c6d0",
+          "on-tertiary": "#ffffff",
+          "surface-container-highest": "#dae3f4",
+          "surface-dim": "#d2daeb",
+          "secondary": "#0058bb",
+          "tertiary-fixed-dim": "#93ccff",
+          "error-container": "#ffdad6",
+          "surface": "#FFFFFF",
+          "primary": "#00234d",
+          "info-blue": "#0284C7",
+          "surface-tint": "#3f5f93",
+          "inverse-on-surface": "#eaf1ff",
+          "on-tertiary-fixed": "#001d31",
+          "secondary-container": "#1e71e2",
+          "hairline-border": "#E3E8EF",
+          "tertiary-container": "#003d5f",
+          "on-secondary-fixed": "#001a41",
+          "on-secondary-container": "#fefcff",
+          "surface-container-high": "#e0e9f9",
+          "on-primary-container": "#85a4dd",
+          "secondary-fixed": "#d8e2ff",
+          "on-tertiary-fixed-variant": "#004b73",
+          "on-error-container": "#93000a",
+          "secondary-fixed-dim": "#adc6ff",
+          "primary-fixed": "#d6e3ff",
+          "inverse-primary": "#aac7ff",
+          "inverse-surface": "#28313d",
+          "error": "#ba1a1a",
+          "on-tertiary-container": "#4babf0",
+          "on-primary": "#ffffff",
+          "on-error": "#ffffff",
+          "match-green": "#16A34A",
+          "primary-fixed-dim": "#aac7ff",
+          "background": "#f8f9ff",
+          "outline": "#747780",
+          "on-secondary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#e5eeff",
+          "paper-bg": "#F5F7FA",
+          "surface-container-low": "#eff4ff",
+          "alert-red": "#DC2626",
+          "on-surface": "#131c28",
+          "on-secondary-fixed-variant": "#004493",
+          "ink-charcoal": "#1A1A2E",
+          "on-primary-fixed-variant": "#254779",
+          "tertiary": "#00263e",
+          "tertiary-fixed": "#cce5ff",
+          "on-background": "#131c28",
+          "surface-bright": "#f8f9ff",
+          "primary-container": "#14396b",
+          "on-surface-variant": "#43474f",
+          "amber-warning": "#D97706",
+          "surface-variant": "#dae3f4",
+          "on-primary-fixed": "#001b3e"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-lg": "1.5rem",
+          "gutter-compact": "0.5rem",
+          "space-md": "1rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem",
+          "margin": "1.5rem",
+          "space-xl": "2rem",
+          "gutter": "1rem"
+        },
+        "fontFamily": {
+          "headline-md": [
+            "\"Inter, Pretendard, sans-serif\""
+          ],
+          "mono-metric": [
+            "\"JetBrains Mono, Consolas, monospace\""
+          ],
+          "body-md": [
+            "\"Inter, Pretendard, sans-serif\""
+          ],
+          "mono-badge": [
+            "\"JetBrains Mono, Consolas, monospace\""
+          ],
+          "headline-lg": [
+            "\"Inter, Pretendard, sans-serif\""
+          ],
+          "label-caps": [
+            "\"Inter, Pretendard, sans-serif\""
+          ],
+          "body-sm": [
+            "\"Inter, Pretendard, sans-serif\""
+          ],
+          "body-lg": [
+            "\"Inter, Pretendard, sans-serif\""
+          ],
+          "headline-sm": [
+            "\"Inter, Pretendard, sans-serif\""
+          ]
+        },
+        "fontSize": {
+          "headline-md": [
+            "1.125rem",
+            {
+              "lineHeight": "1.625rem",
+              "fontWeight": "700"
+            }
+          ],
+          "mono-metric": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.125rem",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "0.875rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "mono-badge": [
+            "0.6875rem",
+            {
+              "lineHeight": "0.875rem",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "1.5rem",
+            {
+              "lineHeight": "2rem",
+              "fontWeight": "700"
+            }
+          ],
+          "label-caps": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "letterSpacing": "0.025em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "1rem",
+            {
+              "lineHeight": "1.6rem",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-paper-bg font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">filter_alt</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">JobFilter</span><span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded-full bg-surface-container text-secondary font-semibold">ADMIN</span></div></div></div></div><div class="px-margin py-space-sm"><div class="px-space-sm py-1 rounded bg-surface-container-low flex items-center justify-between"><span class="font-label-caps text-label-caps text-slate-muted uppercase">운영 관리 모드</span><span class="w-2 h-2 rounded-full bg-match-green"></span></div></div><nav class="flex flex-col gap-space-xs px-space-md mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-semibold shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="admin-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">관리자 대시보드</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="approvals" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-md text-body-md">공고 승인 심사</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="keyword-dictionary" href="#"><span class="material-symbols-outlined text-[20px]">spellcheck</span><span class="font-body-md text-body-md">키워드 사전 관리</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="bulk-upload-logs" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">일괄 업로드 로그</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="user-management" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span class="font-body-md text-body-md">회원 및 권한 관리</span></a></nav></div><div class="p-space-md"><div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] mb-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-slate-muted">파서 인스턴스</span><span class="font-mono-badge text-mono-badge text-match-green font-semibold">HEALTHY</span></div><div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden"><div class="bg-match-green h-full rounded-full w-[94%]"></div></div><div class="flex justify-between items-center mt-1.5"><span class="font-mono-badge text-mono-badge text-slate-muted">수집 큐: 0건 대기</span><span class="font-mono-badge text-mono-badge text-slate-muted">99.98%</span></div></div><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg bg-surface-container-low text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="student-portal" href="#"><span class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">open_in_new</span><span class="font-body-sm text-body-sm font-semibold">포털 메인 바로가기</span></span><span class="font-mono-badge text-mono-badge text-slate-muted">[CS-LIVE]</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-muted text-[18px]">search</span><input class="w-full h-9 pl-9 pr-4 rounded-lg bg-paper-bg text-on-surface font-body-sm text-body-sm placeholder:text-slate-muted focus:outline-none focus:bg-surface transition-all shadow-[0_1px_8px_rgba(0,0,0,0.04)]" placeholder="공고 번호 [F-00], 기술 스택, 기업명 또는 관리자 계정 검색..." type="search"/></div><div class="hidden xl:flex items-center gap-space-sm px-space-sm py-1 rounded-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="w-2 h-2 rounded-full bg-match-green animate-pulse"></span><span class="font-mono-badge text-mono-badge text-on-surface font-medium">실시간 파싱 엔진 정상 가동 중 - v3.4</span></div></div><div class="flex items-center gap-space-md"><button aria-label="시스템 알림" class="relative w-9 h-9 rounded-lg bg-paper-bg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors shadow-[0_1px_8px_rgba(0,0,0,0.04)]" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-alert-red"></span></button><div class="h-6 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><div class="flex items-center justify-end gap-1.5"><span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold">이성호 수석매니저</span><span class="font-mono-badge text-mono-badge px-1 py-0.5 rounded bg-surface-container-high text-slate-muted">SYS_ROOT</span></div><span class="font-body-sm text-body-sm text-slate-muted">포털운영팀 · 기술인사지원</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-14 bg-paper-bg min-h-screen px-margin py-margin"><div class="flex flex-col w-full gap-y-space-md">
+<!-- Top Operational Banner & Dashboard Header -->
+<header class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md bg-surface p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-block w-1.5 h-5 rounded-full bg-secondary"></span>
+<h1 class="font-headline-lg text-headline-lg text-ink-charcoal tracking-tight">관리자 운영 대시보드</h1>
+<div class="flex items-center gap-1.5 ml-space-xs">
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold">F-41~F-45</span>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded-full bg-surface-container text-secondary font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-match-green animate-pulse"></span>
+            자동 분류 파이프라인 엔진 v3.4 활성
+          </span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-slate-muted pl-2.5">
+        컴퓨터공학과 채용공고 자동 필터링, 승인 대기 공고 심사, 기술 스택 키워드 사전 및 일괄 업로드 관리
+      </p>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="inline-flex items-center gap-1.5 px-space-md h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-semibold transition-colors" id="btn-sync" onclick="triggerImmediateSync()" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>동기화 즉시 실행</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md h-9 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-all" onclick="openBulkUploadModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>엑셀 일괄 업로드</span>
+</button>
+</div>
+</header>
+<!-- Top Stat Cards (F-41 Metrics Grid) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Stat 1: Pending Approvals -->
+<div class="bg-surface p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between hover:shadow-[0_4px_12px_rgba(20,57,107,0.08)] transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-slate-muted uppercase">승인 대기 공고 [F-42]</span>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded-full bg-error-container text-alert-red font-semibold">신규 12건 포함</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-headline-lg text-headline-lg text-ink-charcoal font-bold tracking-tight">24</span>
+<span class="font-body-md text-body-md text-slate-muted font-medium">건</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="font-mono-badge text-mono-badge text-slate-muted">전일 대비</span>
+<span class="font-mono-badge text-mono-badge text-amber-warning font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+8건 대기
+        </span>
+</div>
+</div>
+<!-- Stat 2: Total Active Job Postings -->
+<div class="bg-surface p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between hover:shadow-[0_4px_12px_rgba(20,57,107,0.08)] transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-slate-muted uppercase">전체 게시 공고</span>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-surface-container-high text-secondary font-semibold">CS 적합 82.4%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-headline-lg text-headline-lg text-ink-charcoal font-bold tracking-tight">1,420</span>
+<span class="font-body-md text-body-md text-slate-muted font-medium">건</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="font-mono-badge text-mono-badge text-slate-muted">포지션 구성</span>
+<span class="font-mono-badge text-mono-badge text-primary font-medium">신입 940건 · 채용연계형 480건</span>
+</div>
+</div>
+<!-- Stat 3: Active Platform Users -->
+<div class="bg-surface p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between hover:shadow-[0_4px_12px_rgba(20,57,107,0.08)] transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-slate-muted uppercase">활성 사용자 수</span>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded-full bg-surface-container text-match-green font-semibold">주간 94.6%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-headline-lg text-headline-lg text-ink-charcoal font-bold tracking-tight">3,842</span>
+<span class="font-body-md text-body-md text-slate-muted font-medium">명</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="font-mono-badge text-mono-badge text-slate-muted">유저 세분화</span>
+<span class="font-mono-badge text-mono-badge text-ink-charcoal font-medium">컴공 2,190명 / 기업 142사</span>
+</div>
+</div>
+<!-- Stat 4: Bulk Ingestion Success Rate -->
+<div class="bg-surface p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between hover:shadow-[0_4px_12px_rgba(20,57,107,0.08)] transition-all">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-slate-muted uppercase">파싱 성공률 [F-43]</span>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-surface-container text-match-green font-semibold">BATCH STABLE</span>
+</div>
+<div class="flex items-center gap-space-sm my-space-xs">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-match-green font-bold tracking-tight">98.2</span>
+<span class="font-body-md text-body-md text-slate-muted font-semibold">%</span>
+</div>
+<!-- Progress bar indicator -->
+<div class="flex-1 bg-surface-container h-2 rounded-full overflow-hidden ml-space-xs">
+<div class="bg-match-green h-full rounded-full" style="width: 98.2%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="font-mono-badge text-mono-badge text-slate-muted">최근 배치</span>
+<span class="font-mono-badge text-mono-badge text-ink-charcoal font-medium">540행 중 531행 파싱 완료</span>
+</div>
+</div>
+</section>
+<!-- Two-Column Main Console Workspace -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- LEFT MAIN COLUMN: Pending Approval Review Queue (F-42) ~65% (8/12) -->
+<section class="xl:col-span-8 flex flex-col bg-surface rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-hidden">
+<!-- Section Header & Filter Utilities -->
+<div class="p-space-md bg-surface flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">fact_check</span>
+<h2 class="font-headline-md text-headline-md text-ink-charcoal tracking-tight">공고 승인 심사 대기열</h2>
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">F-42 QUEUE</span>
+</div>
+<!-- Batch Action Buttons -->
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1 px-3 h-8 rounded-lg bg-surface-container text-match-green hover:bg-surface-container-high font-body-sm text-body-sm font-semibold transition-colors" onclick="batchApproveSelected()" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span>선택 일괄 승인</span>
+</button>
+<button class="inline-flex items-center gap-1 px-3 h-8 rounded-lg bg-surface-container text-alert-red hover:bg-surface-container-high font-body-sm text-body-sm font-semibold transition-colors" onclick="batchRejectSelected()" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>선택 일괄 반려</span>
+</button>
+</div>
+</div>
+<!-- Filter Sub-bar: Tabs & Search -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pt-space-xs">
+<!-- Segmented Filter Tabs -->
+<div class="flex items-center p-0.5 rounded-lg bg-surface-container-low max-w-fit">
+<button class="tab-btn px-3 py-1 rounded font-body-sm text-body-sm font-semibold bg-surface text-primary shadow-[0_1px_3px_rgba(20,57,107,0.04)]" type="button">
+              전체 <span class="font-mono-badge text-mono-badge ml-1 text-secondary">24</span>
+</button>
+<button class="tab-btn px-3 py-1 rounded font-body-sm text-body-sm text-slate-muted hover:text-on-surface transition-colors" type="button">
+              기업 직접 등록 <span class="font-mono-badge text-mono-badge ml-1 text-slate-muted">9</span>
+</button>
+<button class="tab-btn px-3 py-1 rounded font-body-sm text-body-sm text-slate-muted hover:text-on-surface transition-colors" type="button">
+              크롤링/일괄등록 <span class="font-mono-badge text-mono-badge ml-1 text-slate-muted">15</span>
+</button>
+</div>
+<!-- Search filter box -->
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-muted text-[16px]">search</span>
+<input class="w-full h-8 pl-8 pr-3 rounded-lg bg-surface-container-low text-ink-charcoal font-body-sm text-body-sm placeholder:text-slate-muted focus:outline-none focus:bg-surface transition-all" id="filter-input" placeholder="기업명, 포지션, 직무 검색..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Approvals Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-slate-muted font-label-caps text-label-caps tracking-wider">
+<th class="py-2.5 px-space-md w-10 text-center">
+<input class="rounded text-primary focus:ring-0 cursor-pointer" id="check-all" onclick="toggleSelectAll(this)" type="checkbox"/>
+</th>
+<th class="py-2.5 px-space-sm whitespace-nowrap">요청일시 / 채용 ID</th>
+<th class="py-2.5 px-space-md whitespace-nowrap">기업명</th>
+<th class="py-2.5 px-space-md">포지션명 &amp; 직무 카테고리</th>
+<th class="py-2.5 px-space-sm whitespace-nowrap">학과 / 경력</th>
+<th class="py-2.5 px-space-sm whitespace-nowrap">CS 적합도 (AI)</th>
+<th class="py-2.5 px-space-sm whitespace-nowrap">심사 액션</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40 font-body-sm text-body-sm">
+<!-- Row 1: 네이버클라우드 -->
+<tr class="job-row hover:bg-surface-container-low/60 transition-colors group" data-id="NV-2025-01">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-ink-charcoal">2025-05-16</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">09:14 KST · [NV-01]</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center font-mono-badge text-mono-badge font-bold text-secondary">
+                    NC
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold truncate">네이버클라우드</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">기업직접등록</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-sm text-primary font-semibold hover:underline cursor-pointer">
+                    분산 스토리지 코어 백엔드 엔지니어
+                  </span>
+<div class="flex flex-wrap items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">C++</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Distributed Storage</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Linux</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container font-semibold text-primary max-w-fit">컴공 필수</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5">신입 정규직</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-metric text-mono-metric text-match-green font-bold">96%</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded-full bg-surface-container text-match-green font-semibold">높음</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-match-green transition-colors" onclick="approveJob('NV-2025-01', this)" title="승인 완료" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-alert-red transition-colors" onclick="rejectJob('NV-2025-01', this)" title="사유 입력 후 반려" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-slate-muted transition-colors" onclick="previewJobModal('네이버클라우드', '분산 스토리지 코어 백엔드 엔지니어')" title="상세 모달 미리보기" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: 쿠팡 (Coupang) -->
+<tr class="job-row hover:bg-surface-container-low/60 transition-colors group" data-id="CP-2025-02">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-ink-charcoal">2025-05-16</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">08:42 KST · [CP-02]</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center font-mono-badge text-mono-badge font-bold text-alert-red">
+                    CP
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold truncate">쿠팡 (Coupang)</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">배치 크롤링</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-sm text-primary font-semibold hover:underline cursor-pointer">
+                    검색 랭킹 플랫폼 Java 백엔드 개발자
+                  </span>
+<div class="flex flex-wrap items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Java</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Spring Boot</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Elasticsearch</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container-high font-semibold text-secondary max-w-fit">컴공/SW 우대</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5">신입</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-metric text-mono-metric text-match-green font-bold">94%</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded-full bg-surface-container text-match-green font-semibold">높음</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-match-green transition-colors" onclick="approveJob('CP-2025-02', this)" title="승인 완료" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-alert-red transition-colors" onclick="rejectJob('CP-2025-02', this)" title="사유 입력 후 반려" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-slate-muted transition-colors" onclick="previewJobModal('쿠팡', '검색 랭킹 플랫폼 Java 백엔드 개발자')" title="상세 모달 미리보기" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: 당근 (Daangn) -->
+<tr class="job-row hover:bg-surface-container-low/60 transition-colors group" data-id="DN-2025-03">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-ink-charcoal">2025-05-16</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">08:11 KST · [DN-03]</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center font-mono-badge text-mono-badge font-bold text-amber-warning">
+                    DG
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold truncate">당근 (Daangn)</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">기업직접등록</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-sm text-primary font-semibold hover:underline cursor-pointer">
+                    로컬 광고 서빙 시스템 엔지니어
+                  </span>
+<div class="flex flex-wrap items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Go</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">gRPC</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Kafka</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container font-semibold text-primary max-w-fit">컴공/유관</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5">신입/경력</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-metric text-mono-metric text-info-blue font-bold">88%</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded-full bg-surface-container text-info-blue font-semibold">적합</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-match-green transition-colors" onclick="approveJob('DN-2025-03', this)" title="승인 완료" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-alert-red transition-colors" onclick="rejectJob('DN-2025-03', this)" title="사유 입력 후 반려" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-slate-muted transition-colors" onclick="previewJobModal('당근', '로컬 광고 서빙 시스템 엔지니어')" title="상세 모달 미리보기" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: 우아한형제들 -->
+<tr class="job-row hover:bg-surface-container-low/60 transition-colors group" data-id="WO-2025-04">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-ink-charcoal">2025-05-15</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">21:30 KST · [WO-04]</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center font-mono-badge text-mono-badge font-bold text-info-blue">
+                    BM
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold truncate">우아한형제들</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">크롤링 연동</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-sm text-primary font-semibold hover:underline cursor-pointer">
+                    배민상회 결제 정산 플랫폼 개발자
+                  </span>
+<div class="flex flex-wrap items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Kotlin</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Spring</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">RDBMS</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container-high font-semibold text-slate-muted max-w-fit">전공무관</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5">신입</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-metric text-mono-metric text-amber-warning font-bold">76%</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded-full bg-surface-container text-amber-warning font-semibold">검토 권장</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-match-green transition-colors" onclick="approveJob('WO-2025-04', this)" title="승인 완료" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-alert-red transition-colors" onclick="rejectJob('WO-2025-04', this)" title="사유 입력 후 반려" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-slate-muted transition-colors" onclick="previewJobModal('우아한형제들', '배민상회 결제 정산 플랫폼 개발자')" title="상세 모달 미리보기" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: 무신사 (MUSINSA) -->
+<tr class="job-row hover:bg-surface-container-low/60 transition-colors group" data-id="MS-2025-05">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-ink-charcoal">2025-05-15</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">19:40 KST · [MS-05]</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center font-mono-badge text-mono-badge font-bold text-ink-charcoal">
+                    MS
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold truncate">무신사 (MUSINSA)</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">기업직접등록</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-sm text-primary font-semibold hover:underline cursor-pointer">
+                    물류 창고 관리(WMS) 시스템 백엔드 엔지니어
+                  </span>
+<div class="flex flex-wrap items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Java</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">Spring Boot</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-mono-badge text-mono-badge text-slate-muted">MySQL</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col">
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container-high font-semibold text-secondary max-w-fit">컴공 우대</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5">신입</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-metric text-mono-metric text-match-green font-bold">91%</span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded-full bg-surface-container text-match-green font-semibold">높음</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-match-green transition-colors" onclick="approveJob('MS-2025-05', this)" title="승인 완료" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-alert-red transition-colors" onclick="rejectJob('MS-2025-05', this)" title="사유 입력 후 반려" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-slate-muted transition-colors" onclick="previewJobModal('무신사', '물류 창고 관리(WMS) 시스템 백엔드 엔지니어')" title="상세 모달 미리보기" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-sm px-space-md bg-surface-container-low/40 flex items-center justify-between">
+<span class="font-mono-badge text-mono-badge text-slate-muted">
+          총 24개 대기 공고 중 <strong class="text-ink-charcoal">1-5</strong> 항목 표시 중
+        </span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center bg-surface hover:bg-surface-container-high text-slate-muted transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center bg-primary text-on-primary font-mono-badge text-mono-badge font-semibold" type="button">1</button>
+<button class="w-7 h-7 rounded flex items-center justify-center bg-surface hover:bg-surface-container-high text-ink-charcoal font-mono-badge text-mono-badge transition-colors" type="button">2</button>
+<button class="w-7 h-7 rounded flex items-center justify-center bg-surface hover:bg-surface-container-high text-ink-charcoal font-mono-badge text-mono-badge transition-colors" type="button">3</button>
+<button class="w-7 h-7 rounded flex items-center justify-center bg-surface hover:bg-surface-container-high text-ink-charcoal font-mono-badge text-mono-badge transition-colors" type="button">4</button>
+<button class="w-7 h-7 rounded flex items-center justify-center bg-surface hover:bg-surface-container-high text-ink-charcoal font-mono-badge text-mono-badge transition-colors" type="button">5</button>
+<button class="w-7 h-7 rounded flex items-center justify-center bg-surface hover:bg-surface-container-high text-slate-muted transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- RIGHT SIDE AREA: Keyword Dictionary & Bulk Upload Logs (~35% width, 4/12) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Panel 1: Keyword Dictionary Management (F-44) -->
+<section class="bg-surface rounded-xl p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">spellcheck</span>
+<h2 class="font-headline-md text-headline-md text-ink-charcoal tracking-tight">키워드 사전 관리</h2>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-secondary font-semibold">F-44</span>
+</div>
+<button class="inline-flex items-center gap-1 font-body-sm text-body-sm text-secondary hover:underline font-semibold" onclick="openAddCategoryPrompt()" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>분류 추가</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-slate-muted -mt-1">
+          채용공고 파싱 및 학생 이력서 코칭 시 활용되는 직군별 가중치 키워드
+        </p>
+<!-- Category Sub-tabs -->
+<div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-lg overflow-x-auto text-body-sm font-body-sm">
+<button class="px-2.5 py-1 rounded bg-surface text-primary font-semibold shadow-[0_1px_3px_rgba(20,57,107,0.04)] whitespace-nowrap" type="button">
+            백엔드/인프라 (10)
+          </button>
+<button class="px-2.5 py-1 rounded text-slate-muted hover:text-ink-charcoal whitespace-nowrap transition-colors" type="button">
+            AI/데이터 (8)
+          </button>
+<button class="px-2.5 py-1 rounded text-slate-muted hover:text-ink-charcoal whitespace-nowrap transition-colors" type="button">
+            보안/네트워크 (6)
+          </button>
+<button class="px-2.5 py-1 rounded text-slate-muted hover:text-ink-charcoal whitespace-nowrap transition-colors" type="button">
+            프론트엔드 (9)
+          </button>
+</div>
+<!-- Keyword Chip Cloud Container -->
+<div class="flex flex-wrap gap-1.5 p-space-sm bg-surface-container-low/40 rounded-lg min-h-[140px] content-start" id="keyword-cloud">
+<!-- Keyword Items -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">Java</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">214</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">Spring Boot</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">320</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">Kafka</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">142</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">Redis</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">168</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">MySQL</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">290</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">Docker</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">204</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">Kubernetes</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">132</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">Elasticsearch</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">98</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">gRPC</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">64</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]">
+<span class="font-body-sm text-body-sm text-ink-charcoal font-medium">C++</span>
+<span class="font-mono-badge text-mono-badge text-secondary font-semibold">82</span>
+<button class="text-slate-muted hover:text-alert-red transition-colors ml-0.5" onclick="removeKeyword(this)" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+</div>
+<!-- Inline Keyword Add Form -->
+<form class="flex flex-col gap-space-xs mt-space-xs" onsubmit="handleAddNewKeyword(event)">
+<div class="grid grid-cols-12 gap-space-xs">
+<div class="col-span-6">
+<input class="w-full h-8 px-2.5 rounded-lg bg-surface-container-low text-ink-charcoal font-body-sm text-body-sm focus:outline-none focus:bg-surface placeholder:text-slate-muted" id="new-keyword-name" placeholder="새 키워드 (예: WebFlux)" required="" type="text"/>
+</div>
+<div class="col-span-3">
+<input class="w-full h-8 px-2 rounded-lg bg-surface-container-low text-ink-charcoal font-mono-metric text-mono-metric focus:outline-none focus:bg-surface" id="new-keyword-weight" max="500" min="1" placeholder="가중치" required="" type="number" value="50"/>
+</div>
+<div class="col-span-3">
+<button class="w-full h-8 rounded-lg bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-0.5" type="submit">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>등록</span>
+</button>
+</div>
+</div>
+<p class="font-mono-badge text-mono-badge text-slate-muted mt-0.5">
+            ※ 등록된 키워드는 S-02 필터링 및 S-04 자소서 코칭 히트맵 분석에 즉시 반영됩니다.
+          </p>
+</form>
+</section>
+<!-- Panel 2: Bulk Upload Results & Validation Logs (F-43·F-45) -->
+<section class="bg-surface rounded-xl p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+<h2 class="font-headline-md text-headline-md text-ink-charcoal tracking-tight">일괄 업로드 결과 로그</h2>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-primary font-semibold">F-43·45</span>
+</div>
+<button class="font-body-sm text-body-sm text-secondary hover:underline font-semibold" onclick="showFullLogs()" type="button">
+            로그 전체보기
+          </button>
+</div>
+<!-- Latest Execution Summary Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-mono-metric text-mono-metric text-ink-charcoal font-semibold flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px] text-secondary">table_view</span>
+              2025_상반기_공채크롤링_배치_0516.xlsx
+            </span>
+<span class="font-mono-badge text-mono-badge px-1.5 py-0.5 rounded bg-surface-container text-match-green font-bold">완료</span>
+</div>
+<div class="flex items-center justify-between text-slate-muted font-mono-badge text-mono-badge">
+<span>실행 일시: 2025-05-16 08:30:12 KST</span>
+<span>배치 ID: #BAT-8831</span>
+</div>
+<!-- Mini Breakdown Bar -->
+<div class="grid grid-cols-4 gap-1.5 pt-space-xs">
+<div class="flex flex-col bg-surface p-1.5 rounded">
+<span class="font-mono-badge text-mono-badge text-slate-muted">총 행 수</span>
+<span class="font-mono-metric text-mono-metric text-ink-charcoal font-bold">540행</span>
+</div>
+<div class="flex flex-col bg-surface p-1.5 rounded">
+<span class="font-mono-badge text-mono-badge text-match-green">자동 등록</span>
+<span class="font-mono-metric text-mono-metric text-match-green font-bold">498건</span>
+</div>
+<div class="flex flex-col bg-surface p-1.5 rounded">
+<span class="font-mono-badge text-mono-badge text-slate-muted">비관련 제외</span>
+<span class="font-mono-metric text-mono-metric text-slate-muted font-bold">32건</span>
+</div>
+<div class="flex flex-col bg-surface p-1.5 rounded">
+<span class="font-mono-badge text-mono-badge text-alert-red">중복 제외</span>
+<span class="font-mono-metric text-mono-metric text-alert-red font-bold">10건</span>
+</div>
+</div>
+</div>
+<!-- Detailed Exclusion Reason Feed -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-slate-muted uppercase">자동 예외 처리 항목 (최근 4건)</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">총 42건 제외</span>
+</div>
+<div class="flex flex-col gap-1.5 font-body-sm text-body-sm max-h-56 overflow-y-auto pr-0.5">
+<!-- Reason item 1 -->
+<div class="p-2 rounded-lg bg-surface-container-low/60 flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-badge text-mono-badge px-1 py-0.2 rounded bg-surface-container text-slate-muted font-semibold">비관련 제외</span>
+<span class="text-ink-charcoal font-semibold">마케팅·콘텐츠 기획자 공고</span>
+</div>
+<span class="font-body-sm text-body-sm text-slate-muted mt-0.5">컴공 무관 키워드 감지 (광고 집행, 퍼포먼스 마케팅)</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted whitespace-nowrap">행 #82</span>
+</div>
+<!-- Reason item 2 -->
+<div class="p-2 rounded-lg bg-surface-container-low/60 flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-badge text-mono-badge px-1 py-0.2 rounded bg-error-container text-alert-red font-semibold">중복 제외</span>
+<span class="text-ink-charcoal font-semibold">네이버 2025 상반기 백엔드 공채</span>
+</div>
+<span class="font-body-sm text-body-sm text-slate-muted mt-0.5">공고 식별자 NV-2025-048 기등록 공고와 일치</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted whitespace-nowrap">행 #145</span>
+</div>
+<!-- Reason item 3 -->
+<div class="p-2 rounded-lg bg-surface-container-low/60 flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-badge text-mono-badge px-1 py-0.2 rounded bg-surface-container text-slate-muted font-semibold">비관련 제외</span>
+<span class="text-ink-charcoal font-semibold">사무보조 및 CS 운영 상담</span>
+</div>
+<span class="font-body-sm text-body-sm text-slate-muted mt-0.5">소프트웨어 개발/엔지니어링 업무 불일치 판정</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted whitespace-nowrap">행 #312</span>
+</div>
+<!-- Reason item 4 -->
+<div class="p-2 rounded-lg bg-surface-container-low/60 flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-mono-badge text-mono-badge px-1 py-0.2 rounded bg-error-container text-alert-red font-semibold">중복 제외</span>
+<span class="text-ink-charcoal font-semibold">토스페이먼츠 코어 뱅킹</span>
+</div>
+<span class="font-body-sm text-body-sm text-slate-muted mt-0.5">채용 관리 고유 ID TS-992 기저장 항목</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted whitespace-nowrap">행 #405</span>
+</div>
+</div>
+</div>
+<!-- Action footer button -->
+<button class="w-full h-8 mt-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-semibold transition-colors flex items-center justify-center gap-1.5" onclick="manualReviewExcludedItems()" type="button">
+<span class="material-symbols-outlined text-[16px]">rule</span>
+<span>미반영 항목 수동 재검토 (42건)</span>
+</button>
+</section>
+</div>
+</div>
+<!-- Interactive Modal 1: Job Posting Detail Review Preview (Hidden by default) -->
+<div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-ink-charcoal/40 backdrop-blur-sm hidden" id="preview-modal" role="dialog">
+<div class="bg-surface w-full max-w-2xl rounded-xl shadow-[0_12px_32px_rgba(26,26,46,0.12)] flex flex-col overflow-hidden max-h-[921px]">
+<!-- Modal Header -->
+<div class="p-space-md bg-surface flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">visibility</span>
+<h3 class="font-headline-md text-headline-md text-ink-charcoal" id="modal-company-title">공고 상세 검토 미리보기</h3>
+</div>
+<button class="text-slate-muted hover:text-ink-charcoal p-1 rounded-lg hover:bg-surface-container transition-colors" onclick="closePreviewModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Content Body -->
+<div class="p-space-md overflow-y-auto flex flex-col gap-space-md">
+<div class="flex items-start justify-between bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-slate-muted" id="modal-company-name">네이버클라우드</span>
+<h4 class="font-headline-md text-headline-md text-ink-charcoal font-bold" id="modal-job-title">분산 스토리지 코어 백엔드 엔지니어</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-mono-badge text-mono-badge px-2 py-0.5 rounded bg-surface-container text-match-green font-semibold">AI 적합도 96%</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">정규직 신입 · 판교 본사</span>
+</div>
+</div>
+<span class="font-mono-badge text-mono-badge px-2.5 py-1 rounded-full bg-error-container text-alert-red font-semibold">승인 대기</span>
+</div>
+<!-- Matching Tech Requirements -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold">감지된 핵심 기술 스택 및 요건</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded bg-surface-container font-mono-badge text-mono-badge text-primary font-medium">C++ (가중치 82)</span>
+<span class="px-2 py-1 rounded bg-surface-container font-mono-badge text-mono-badge text-primary font-medium">Distributed File System</span>
+<span class="px-2 py-1 rounded bg-surface-container font-mono-badge text-mono-badge text-primary font-medium">Linux Kernel</span>
+<span class="px-2 py-1 rounded bg-surface-container font-mono-badge text-mono-badge text-primary font-medium">Multi-threading / Concurrency</span>
+</div>
+</div>
+<!-- Validation Details Box -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-mono-badge text-mono-badge text-slate-muted uppercase">자격 요건 적격성 분석 결과</span>
+<p class="font-body-sm text-body-sm text-ink-charcoal">
+            • 컴퓨터공학과 또는 전자·소프트웨어 관련 학과 4년제 졸업(예정)자 필수 항목 확인됨.<br/>
+            • 자료구조, 운영체제(OS), 분산 네트워크 과목 이수 권장 및 코딩테스트 안내 포함.
+          </p>
+</div>
+<!-- Approval / Rejection Note Input -->
+<div class="flex flex-col gap-1">
+<label class="font-body-sm text-body-sm text-slate-muted font-medium" for="review-admin-comment">관리자 심사 메모 (선택사항)</label>
+<input class="w-full h-9 px-3 rounded-lg bg-surface-container-low text-ink-charcoal font-body-sm text-body-sm focus:outline-none focus:bg-surface" id="review-admin-comment" placeholder="특이사항 또는 학생 포털 강조 공지 메모 입력..." type="text"/>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-sm px-space-md bg-surface-container-low flex items-center justify-end gap-space-xs">
+<button class="px-3 h-8 rounded-lg bg-surface hover:bg-surface-container text-slate-muted font-body-sm text-body-sm font-semibold transition-colors" onclick="closePreviewModal()" type="button">
+          닫기
+        </button>
+<button class="px-3 h-8 rounded-lg bg-error-container text-alert-red hover:bg-error hover:text-on-error font-body-sm text-body-sm font-semibold transition-colors" onclick="modalRejectAction()" type="button">
+          반려 처리
+        </button>
+<button class="px-4 h-8 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-body-sm text-body-sm font-semibold transition-colors" onclick="modalApproveAction()" type="button">
+          최종 승인 및 포털 게시
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Modal 2: Bulk Excel Upload (Hidden by default) -->
+<div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-ink-charcoal/40 backdrop-blur-sm hidden" id="bulk-modal" role="dialog">
+<div class="bg-surface w-full max-w-lg rounded-xl shadow-[0_12px_32px_rgba(26,26,46,0.12)] flex flex-col overflow-hidden">
+<div class="p-space-md bg-surface flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">upload_file</span>
+<h3 class="font-headline-md text-headline-md text-ink-charcoal">채용공고 엑셀 일괄 업로드 [F-43]</h3>
+</div>
+<button class="text-slate-muted hover:text-ink-charcoal p-1 rounded hover:bg-surface-container" onclick="closeBulkUploadModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Drag & Drop Zone -->
+<div class="p-space-xl rounded-xl bg-surface-container-low/70 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[36px] text-secondary mb-2">cloud_upload</span>
+<p class="font-headline-sm text-body-sm text-ink-charcoal font-semibold">
+            .xlsx 또는 .csv 파일을 이곳으로 드래그하거나 클릭하여 선택
+          </p>
+<span class="font-body-sm text-body-sm text-slate-muted mt-1">
+            지원 양식: 표준 공고 템플릿 v2.1 (최대 10MB)
+          </span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low text-body-sm font-body-sm">
+<span class="text-slate-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">download</span>
+            공식 일괄 업로드 양식 서식
+          </span>
+<button class="text-secondary font-semibold hover:underline" onclick="toast('템플릿 다운로드가 시작되었습니다.')" type="button">
+            양식 받기 (.xlsx)
+          </button>
+</div>
+</div>
+<div class="p-space-sm px-space-md bg-surface-container-low flex items-center justify-end gap-space-xs">
+<button class="px-3 h-8 rounded-lg bg-surface text-slate-muted font-body-sm text-body-sm font-semibold" onclick="closeBulkUploadModal()" type="button">취소</button>
+<button class="px-4 h-8 rounded-lg bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary transition-colors" onclick="startBulkParsingProcess()" type="button">
+          파일 검증 및 파싱 시작
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-2 px-4 py-2.5 rounded-lg bg-ink-charcoal text-on-primary shadow-[0_12px_32px_rgba(26,26,46,0.12)] font-body-sm text-body-sm transition-all duration-300" id="toast">
+<span class="material-symbols-outlined text-match-green text-[18px]">check_circle</span>
+<span id="toast-message">작업이 성공적으로 완료되었습니다.</span>
+</div>
+</div>
+<script>
+  function toast(message, isError = false) {
+    const el = document.getElementById('toast');
+    const msgEl = document.getElementById('toast-message');
+    if (!el || !msgEl) return;
+
+    msgEl.textContent = message;
+    const icon = el.querySelector('.material-symbols-outlined');
+    if (icon) {
+      icon.textContent = isError ? 'error' : 'check_circle';
+      icon.className = `material-symbols-outlined ${isError ? 'text-alert-red' : 'text-match-green'} text-[18px]`;
+    }
+
+    el.classList.remove('hidden');
+    el.classList.add('flex');
+
+    setTimeout(() => {
+      el.classList.remove('flex');
+      el.classList.add('hidden');
+    }, 3200);
+  }
+
+  function triggerImmediateSync() {
+    const btn = document.getElementById('btn-sync');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    icon.classList.add('animate-spin');
+    toast('채용 포털 크롤러 및 AI 분류 파이프라인 동기화 시작 중...');
+
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      toast('동기화 완료: 신규 공고 3건이 큐에 추가되었습니다.');
+    }, 1400);
+  }
+
+  function toggleSelectAll(master) {
+    const checkboxes = document.querySelectorAll('.row-checkbox');
+    checkboxes.forEach(cb => {
+      cb.checked = master.checked;
+    });
+  }
+
+  function batchApproveSelected() {
+    const selected = document.querySelectorAll('.row-checkbox:checked');
+    if (selected.length === 0) {
+      toast('선택된 공고가 없습니다. 체크박스를 선택해주세요.', true);
+      return;
+    }
+
+    selected.forEach(cb => {
+      const row = cb.closest('tr');
+      if (row) {
+        row.style.opacity = '0.35';
+        row.style.pointerEvents = 'none';
+      }
+    });
+
+    toast(`${selected.length}건의 공고가 승인되어 학생 포털에 정식 게시되었습니다.`);
+  }
+
+  function batchRejectSelected() {
+    const selected = document.querySelectorAll('.row-checkbox:checked');
+    if (selected.length === 0) {
+      toast('선택된 공고가 없습니다. 체크박스를 선택해주세요.', true);
+      return;
+    }
+
+    selected.forEach(cb => {
+      const row = cb.closest('tr');
+      if (row) {
+        row.style.opacity = '0.35';
+        row.style.pointerEvents = 'none';
+      }
+    });
+
+    toast(`${selected.length}건의 공고가 반려 처리되었습니다.`, true);
+  }
+
+  function approveJob(id, btn) {
+    const row = btn.closest('tr');
+    if (row) {
+      row.style.opacity = '0.4';
+      row.style.pointerEvents = 'none';
+    }
+    toast(`[${id}] 공고가 최종 승인되었습니다.`);
+  }
+
+  function rejectJob(id, btn) {
+    const reason = prompt('반려 사유를 입력하세요 (예: 컴공 SW 업무 무관, 학점/자격 요건 불일치):', '컴퓨터공학과 채용 적합성 기준 미달');
+    if (reason !== null) {
+      const row = btn.closest('tr');
+      if (row) {
+        row.style.opacity = '0.3';
+        row.style.pointerEvents = 'none';
+      }
+      toast(`[${id}] 반려 완료: ${reason}`, true);
+    }
+  }
+
+  function previewJobModal(company, job) {
+    const modal = document.getElementById('preview-modal');
+    document.getElementById('modal-company-title').textContent = `${company} 공고 검토`;
+    document.getElementById('modal-company-name').textContent = company;
+    document.getElementById('modal-job-title').textContent = job;
+    modal.classList.remove('hidden');
+  }
+
+  function closePreviewModal() {
+    document.getElementById('preview-modal').classList.add('hidden');
+  }
+
+  function modalApproveAction() {
+    closePreviewModal();
+    toast('해당 공고가 검토 후 최종 승인되었습니다.');
+  }
+
+  function modalRejectAction() {
+    closePreviewModal();
+    toast('해당 공고가 반려 처리되었습니다.', true);
+  }
+
+  function openBulkUploadModal() {
+    document.getElementById('bulk-modal').classList.remove('hidden');
+  }
+
+  function closeBulkUploadModal() {
+    document.getElementById('bulk-modal').classList.add('hidden');
+  }
+
+  function startBulkParsingProcess() {
+    closeBulkUploadModal();
+    toast('엑셀 파일 파싱 엔진이 구동 중입니다. (약 3초 소요)');
+    setTimeout(() => {
+      toast('배치 파싱 완료: 540건 중 531건 정상 반영, 9건 예외 제외됨.');
+    }, 2500);
+  }
+
+  function removeKeyword(btn) {
+    const chip = btn.closest('div');
+    const word = chip.querySelector('span').textContent;
+    if (confirm(`'${word}' 키워드를 사전에서 제거하시겠습니까?`)) {
+      chip.remove();
+      toast(`키워드 '${word}' 제거 완료.`);
+    }
+  }
+
+  function handleAddNewKeyword(e) {
+    e.preventDefault();
+    const nameInput = document.getElementById('new-keyword-name');
+    const weightInput = document.getElementById('new-keyword-weight');
+    const cloud = document.getElementById('keyword-cloud');
+
+    const name = nameInput.value.trim();
+    const weight = weightInput.value.trim();
+
+    if (!name) return;
+
+    const chip = document.createElement('div');
+    chip.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface shadow-[0_1px_3px_rgba(20,57,107,0.04)]';
+    chip.innerHTML = `
+      <span class="font-body-sm text-body-sm text-ink-charcoal font-medium">${name}</span>
+      <span class="font-mono-badge text-mono-badge text-secondary font-semibold">${weight}</span>
+      <button type="button" onclick="removeKeyword(this)" class="text-slate-muted hover:text-alert-red transition-colors ml-0.5">
+        <span class="material-symbols-outlined text-[14px]">close</span>
+      </button>
+    `;
+
+    cloud.appendChild(chip);
+    nameInput.value = '';
+    weightInput.value = '50';
+    toast(`키워드 '${name}'(가중치: ${weight})가 성공적으로 등록되었습니다.`);
+  }
+
+  function openAddCategoryPrompt() {
+    const cat = prompt('신규 직군/기술 카테고리명을 입력하세요 (예: 클라우드/DevOps, 임베디드/IoT):');
+    if (cat) {
+      toast(`카테고리 '${cat}' 생성이 접수되었습니다.`);
+    }
+  }
+
+  function showFullLogs() {
+    toast('전체 업로드 이력 아카이브(총 84회)를 불러왔습니다.');
+  }
+
+  function manualReviewExcludedItems() {
+    toast('비관련/중복 제외 42건에 대한 수동 보정 큐를 엽니다.');
+  }
+
+  // Quick live search filter on table
+  document.getElementById('filter-input')?.addEventListener('input', function(e) {
+    const val = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('.job-row');
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(val) ? '' : 'none';
+    });
+  });
+</script></main></div><script src="app.js?v=5"></script>
+</body></html>

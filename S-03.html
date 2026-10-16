@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter,+Pretendard,+sans-serif:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-fixed-dim":"#93ccff","paper-bg":"#F5F7FA","on-surface":"#131c28","on-secondary-fixed-variant":"#004493","on-tertiary":"#ffffff","info-blue":"#0284C7","surface-tint":"#3f5f93","on-secondary-container":"#fefcff","on-error":"#ffffff","alert-red":"#DC2626","on-tertiary-container":"#4babf0","secondary-fixed":"#d8e2ff","inverse-surface":"#28313d","surface-container-high":"#e0e9f9","on-surface-variant":"#43474f","hairline-border":"#E3E8EF","tertiary-fixed":"#cce5ff","match-green":"#16A34A","surface":"#FFFFFF","primary-fixed":"#d6e3ff","primary-fixed-dim":"#aac7ff","on-background":"#131c28","ink-charcoal":"#1A1A2E","primary-container":"#14396b","surface-variant":"#dae3f4","on-primary-container":"#85a4dd","surface-container-low":"#eff4ff","secondary-fixed-dim":"#adc6ff","primary":"#00234d","surface-container":"#e5eeff","slate-muted":"#5B6472","on-secondary":"#ffffff","on-tertiary-fixed":"#001d31","on-primary":"#ffffff","surface-container-highest":"#dae3f4","inverse-on-surface":"#eaf1ff","on-primary-fixed-variant":"#254779","outline-variant":"#c3c6d0","amber-warning":"#D97706","on-primary-fixed":"#001b3e","secondary":"#0058bb","surface-container-lowest":"#ffffff","on-secondary-fixed":"#001a41","surface-bright":"#f8f9ff","on-tertiary-fixed-variant":"#004b73","tertiary-container":"#003d5f","error":"#ba1a1a","secondary-container":"#1e71e2","outline":"#747780","on-error-container":"#93000a","tertiary":"#00263e","surface-dim":"#d2daeb","background":"#f8f9ff","error-container":"#ffdad6","inverse-primary":"#aac7ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1.5rem","gutter":"1rem","space-sm":"0.5rem","space-md":"1rem","space-xs":"0.25rem","gutter-compact":"0.5rem","space-lg":"1.5rem","space-xl":"2rem"},"fontFamily":{"headline-sm":["\"Inter, Pretendard, sans-serif\""],"mono-metric":["\"JetBrains Mono, Consolas, monospace\""],"body-sm":["\"Inter, Pretendard, sans-serif\""],"label-caps":["\"Inter, Pretendard, sans-serif\""],"body-md":["\"Inter, Pretendard, sans-serif\""],"headline-md":["\"Inter, Pretendard, sans-serif\""],"body-lg":["\"Inter, Pretendard, sans-serif\""],"headline-lg":["\"Inter, Pretendard, sans-serif\""],"mono-badge":["\"JetBrains Mono, Consolas, monospace\""]},"fontSize":{"headline-sm":["1rem",{"lineHeight":"1.5rem","fontWeight":"600"}],"mono-metric":["0.8125rem",{"lineHeight":"1.125rem","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"label-caps":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.025em","fontWeight":"600"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","fontWeight":"400"}],"headline-md":["1.125rem",{"lineHeight":"1.625rem","fontWeight":"700"}],"body-lg":["1rem",{"lineHeight":"1.6rem","fontWeight":"400"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","fontWeight":"700"}],"mono-badge":["0.6875rem",{"lineHeight":"0.875rem","fontWeight":"500"}]}}}};</script></head><body class="bg-paper-bg text-on-surface font-body-md text-body-md antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-60 bg-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-14 px-margin flex items-center gap-space-sm bg-surface"><img alt="JobFilter Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UyQpxP38rTPpVBPWRYGvPZ_zLPSSz-zwKC7cA6qC_ulhfM9ZZc9uikMiyYsdiTY29Ulg8Meznsv7N3gLFfZ5Xzg5OfeUFXt3YjN4fBKOudBO_hG-aE5abQPtDSo02WHBrSjO5eMI9J2JTrp4nLOGuHk8W-F10bbrJEhIkh4ogm-FcHl26NSVWfYsw_0OVfINM364fHgac2NDEgPZvzpkzoK_8O_GAP1JVBLkh3lWvXUnpvISsPuEjQDd81"/><div class="flex flex-col leading-tight"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">JobFilter</span><span class="font-label-caps text-label-caps text-slate-muted">컴공 채용 포털</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs mb-space-xs font-mono-badge text-mono-badge text-slate-muted uppercase tracking-wider">Navigation</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-headline-sm shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-lg">dashboard</span><span class="font-body-md text-body-md font-medium">대시보드</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="job-listings" href="#"><span class="material-symbols-outlined text-lg">work</span><span class="font-body-md text-body-md font-medium">공고 목록</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="application-kanban" href="#"><span class="material-symbols-outlined text-lg">view_kanban</span><span class="font-body-md text-body-md font-medium">지원 관리</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cover-letter-coach" href="#"><span class="material-symbols-outlined text-lg">edit_note</span><span class="font-body-md text-body-md font-medium">자소서 코칭</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="profile-management" href="#"><span class="material-symbols-outlined text-lg">person</span><span class="font-body-md text-body-md font-medium">프로필 관리</span></a></nav></div></div><div class="p-space-md m-space-md bg-surface-container-low rounded-lg"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-slate-muted">스펙 캘리브레이션</span><span class="font-mono-metric text-mono-metric text-match-green font-semibold">84%</span></div><div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden"><div class="bg-match-green h-full rounded-full" style="width: 84%"></div></div><p class="mt-space-xs font-body-sm text-body-sm text-slate-muted leading-tight">CS 핵심 전공 5/6 이수 완료</p></div></aside><div class="pl-60 min-h-screen flex flex-col"><header class="fixed top-0 left-60 right-0 h-14 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-margin flex items-center justify-between"><div class="flex items-center gap-space-md w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-slate-muted text-base">search</span><input class="w-full pl-8 pr-space-md py-1.5 bg-paper-bg rounded-lg text-on-surface placeholder:text-slate-muted font-body-sm text-body-sm focus:outline-none focus:bg-surface transition-all" placeholder="기술 스택, 기업명, 공고 직무 검색 (예: Spring Boot, 백엔드)..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="inline-flex items-center gap-space-xs px-space-md py-1 bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-info-blue"></span><span class="font-body-sm text-body-sm text-primary font-medium">한국대학교 컴퓨터공학과 김민우 님</span></div><button class="relative p-1.5 rounded-lg text-slate-muted hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-alert-red"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ZxWHnKTA1k8RPAMDc3gzEpSctL8JnY2tDjcp9GQTRRXxthg3EpMQ2fthnE-jyIVIXscj2bDUI0BmD0xFVIUaiix-aRengRwG8IzEWdljBnCFWWt_x3Ncny784T7JMvTeXRsNHzMuOSkoNTr-UNe0YfjRgJbLN46RAkbMXQi9QjgQEy5wTM2E8mgHvHiEruJHYINKlEM8C8vX0ZHa4BE5hEfXW-NQxL6rxqq0ENM7MfvETLHsoN6sog"/><div class="hidden xl:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">김민우</span><span class="font-label-caps text-label-caps text-slate-muted leading-none">학부 4학년</span></div></div></div></header><main class="relative w-full pt-14 bg-paper-bg flex-1 px-margin py-margin"><div class="flex flex-col w-full">
+<!-- Interactive Top Action & Meta Bar -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<!-- Breadcrumb & Back Action -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-slate-muted">
+<a class="inline-flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+<span class="font-medium">공고 목록으로 돌아가기</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span>네이버 (NAVER)</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-medium truncate max-w-md">검색 플랫폼 분산 백엔드 개발자 (2025 상반기 신입)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container font-mono-badge text-mono-badge text-primary">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-match-green animate-pulse"></span>
+<span>실시간 채용공고 동기화 중 [F-12]</span>
+</div>
+</div>
+<!-- Sticky Position Header Card -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md">
+<!-- Naver Custom Monogram Badge -->
+<div class="w-14 h-14 rounded-lg bg-[#03C75A] flex items-center justify-center text-white flex-shrink-0 shadow-sm">
+<span class="font-headline-lg text-headline-lg font-black tracking-tighter">N</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">네이버 (NAVER)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono-badge text-mono-badge text-primary">공채 No. NV-2025-048</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">검색 플랫폼 분산 백엔드 개발자 (2025 상반기 신입)</h1>
+<div class="flex flex-wrap items-center gap-space-xs mt-1">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-primary font-label-caps text-label-caps">정규직 신입</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-slate-muted font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> 판교 그린팩토리 / 하이브리드 근무
+            </span>
+<span class="px-2.5 py-1 rounded bg-red-50 text-alert-red font-mono-metric text-mono-metric font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">alarm</span> 마감 D-2 (2025-05-18 23:59 마감)
+            </span>
+</div>
+</div>
+</div>
+<!-- Quick Action CTA Cluster -->
+<div class="flex flex-wrap items-center gap-space-xs xl:justify-end flex-shrink-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors font-body-sm text-body-sm" id="bookmark-btn" onclick="toggleBookmark()" type="button">
+<span class="material-symbols-outlined text-lg text-slate-muted" id="bookmark-icon">bookmark_border</span>
+<span class="font-medium" id="bookmark-text">스크랩 142</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-slate-muted hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">share</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-primary font-body-sm text-body-sm font-semibold transition-colors" id="kanban-add-btn" onclick="addToKanban()" type="button">
+<span class="material-symbols-outlined text-lg text-secondary">view_kanban</span>
+<span>지원 관리 칸반에 등록</span>
+</button>
+<a class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-secondary-container hover:bg-secondary text-white font-body-sm text-body-sm font-semibold shadow-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">edit_note</span>
+<span>자소서 코칭으로 이동</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-white font-headline-sm text-headline-sm shadow-sm transition-colors" href="https://recruit.navercorp.com" rel="noopener noreferrer" target="_blank">
+<span>원문 공고 즉시 지원</span>
+<span class="material-symbols-outlined text-base">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Notification Banner for Student Sync -->
+<div class="bg-surface-container-low rounded-lg p-space-md mb-space-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-info-blue text-xl">verified_user</span>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-primary font-semibold">김민우 님의 학사 정보 연동 완료</span>
+<span class="text-slate-muted font-body-sm text-body-sm">(한국대학교 컴퓨터공학과 2021**** / 7학기 이수 / 누적 전공 3.92)</span>
+</div>
+</div>
+<span class="font-mono-badge text-mono-badge text-match-green font-semibold bg-emerald-50 px-2 py-0.5 rounded">최근 갱신: 2025-05-16 09:20</span>
+</div>
+<!-- Two-Column Main Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column (Job Description & Deep Context) ~65% -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-space-lg">
+<!-- 1. 공고 개요 카드 (Overview Summary Card) -->
+<section class="bg-surface rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">info</span>
+<span>공고 개요</span>
+</h2>
+<span class="font-mono-badge text-mono-badge text-slate-muted uppercase">JOB SPECIFICATION</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-bright">
+<span class="material-symbols-outlined text-slate-muted mt-0.5 text-lg">category</span>
+<div>
+<p class="font-label-caps text-label-caps text-slate-muted">모집 직무</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">백엔드 / 분산 시스템 아키텍처</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-bright">
+<span class="material-symbols-outlined text-slate-muted mt-0.5 text-lg">badge</span>
+<div>
+<p class="font-label-caps text-label-caps text-slate-muted">고용 형태</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">정규직 신입 (수습 3개월 평가 후 전환)</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-bright">
+<span class="material-symbols-outlined text-slate-muted mt-0.5 text-lg">event_available</span>
+<div>
+<p class="font-label-caps text-label-caps text-slate-muted">서류 접수 마감</p>
+<p class="font-mono-metric text-mono-metric text-alert-red font-semibold">2025-05-18 23:59:00 KST (D-2)</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-bright">
+<span class="material-symbols-outlined text-slate-muted mt-0.5 text-lg">apartment</span>
+<div>
+<p class="font-label-caps text-label-caps text-slate-muted">근무지</p>
+<p class="font-body-md text-body-md text-on-surface">경기도 성남시 분당구 정자일로 95 네이버 그린팩토리</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-space-sm rounded-lg bg-surface-bright md:col-span-2">
+<span class="material-symbols-outlined text-info-blue mt-0.5 text-lg">terminal</span>
+<div>
+<p class="font-label-caps text-label-caps text-info-blue font-semibold">코딩테스트 일정 및 플랫폼</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">프로그래머스 기반 온라인 코딩테스트 5월 24일(토) 14:00~17:00 (알고리즘 4문항 + SQL 1문항)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. 포지션 소개 및 담당 업무 -->
+<section class="bg-surface rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">hub</span>
+<span>포지션 소개 및 주요 담당 업무</span>
+</h2>
+<span class="font-mono-badge text-mono-badge text-match-green font-semibold bg-emerald-50 px-2 py-0.5 rounded">SEARCH CORE PLATFORM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md">
+          네이버 검색 플랫폼 조직은 전 국민의 일상 속 질의에 대해 밀리초 단위로 응답하는 초거대 정보 유통 엔진을 만듭니다. 매일 쏟아지는 수억 건의 질의응답 로그와 웹 스케일 문서를 실시간으로 파싱하고 랭킹하는 고성능 분산 백엔드 플랫폼을 구축하며, 네이버 차세대 AI 검색 서비스의 백본 파이프라인을 직접 설계하고 서빙합니다.
+        </p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">주요 담당 업무</h3>
+<ul class="flex flex-col gap-space-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span>
+<span>네이버 통합검색 및 AI 지식인터랙션 포털의 <strong>초대용량 분산 인덱싱 및 서빙 파이프라인</strong> 마이크로서비스 아키텍처 개발</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span>
+<span>초당 수십만 QPS(Queries Per Second) 스파이크 트래픽을 지연 없이 방어하기 위한 <strong>고가용성 분산 캐싱 레이어 및 샤딩 엔진 고도화</strong></span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span>
+<span><strong>Apache Kafka</strong> 분산 이벤트 스트림을 활용한 실시간 검색어 랭킹, 피드 수집 및 검색품질 분석 파이프라인 운영</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></span>
+<span><strong>Java 21, Spring Boot 3.x, gRPC</strong> 환경 기반 백엔드 시스템 설계 및 사내 프라이빗 쿠버네티스 컨테이너 오케스트레이션 적용</span>
+</li>
+</ul>
+</section>
+<!-- 3. 지원 자격 및 우대 사항 -->
+<section class="bg-surface rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">fact_check</span>
+<span>지원 자격 및 우대 사항</span>
+</h2>
+<span class="font-mono-badge text-mono-badge text-slate-muted">REQUIREMENTS &amp; PREFERENCES</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- 지원 자격 -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="inline-block px-2 py-0.5 rounded bg-primary text-white font-mono-badge text-mono-badge font-bold">필수</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">지원 자격 (기본 요건)</h3>
+</div>
+<ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-match-green text-base mt-0.5 flex-shrink-0">check_circle</span>
+<span>컴퓨터공학 또는 이에 준하는 SW 관련 학과 4년제 학사 학위 기취득자 또는 2025년 8월/2026년 2월 졸업예정자</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-match-green text-base mt-0.5 flex-shrink-0">check_circle</span>
+<span>Java 또는 Kotlin 기반의 객체지향 프로그래밍(OOP) 역량 및 탄탄한 자료구조/알고리즘 이해도</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-match-green text-base mt-0.5 flex-shrink-0">check_circle</span>
+<span>네트워크(TCP/IP, HTTP), OS(멀티스레딩, 프로세스 동기화), DB 트랜잭션 격리수준 등 CS 핵심 이론 지식</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-match-green text-base mt-0.5 flex-shrink-0">check_circle</span>
+<span>RDBMS(MySQL/PostgreSQL) 쿼리 작성 및 인덱스 활용, Redis 캐시 활용 경험</span>
+</li>
+</ul>
+</div>
+<!-- 우대 사항 -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="inline-block px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono-badge text-mono-badge font-bold">우대</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">우대 사항</h3>
+</div>
+<ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-info-blue text-base mt-0.5 flex-shrink-0">add_task</span>
+<span>대규모 트래픽 환경에서 Kafka, Redis Cluster, Elasticsearch 등을 활용한 분산 시스템 개발 경험</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-info-blue text-base mt-0.5 flex-shrink-0">add_task</span>
+<span>깃허브 오픈소스 프로젝트 커밋 기여 또는 SW 마에스트로 / 우아한테크코스 등 전문 부트캠프 수료자</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-info-blue text-base mt-0.5 flex-shrink-0">add_task</span>
+<span>Kubernetes 클라우드 네이티브 배포 및 Prometheus/Grafana 기반 APM 모니터링 구축 경험자</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-info-blue text-base mt-0.5 flex-shrink-0">add_task</span>
+<span>컴퓨터공학 전공 평점 우수자 (자료구조, 알고리즘, 운영체제, 네트워크, DB 등 5과목 이상 A학점 보유)</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 4. 전형 절차 안내 타임라인 -->
+<section class="bg-surface rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">timeline</span>
+<span>전형 절차 안내 타임라인</span>
+</h2>
+<span class="font-label-caps text-label-caps text-slate-muted">STAGE 1/5 PROCEEDING</span>
+</div>
+<div class="relative py-space-sm">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-sm relative z-10">
+<!-- Step 1 -->
+<div class="bg-primary text-white p-space-md rounded-lg flex flex-col justify-between shadow-sm">
+<div>
+<span class="font-mono-badge text-mono-badge text-tertiary-fixed-dim uppercase">STEP 01</span>
+<p class="font-headline-sm text-headline-sm font-semibold mt-1">서류 접수</p>
+<p class="font-mono-metric text-mono-metric text-tertiary-fixed mt-1">~ 05.18 23:59</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1 text-tertiary-fixed-dim font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-alert-red animate-ping"></span>
+<span>접수 진행 중</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-bright p-space-md rounded-lg flex flex-col justify-between">
+<div>
+<span class="font-mono-badge text-mono-badge text-slate-muted uppercase">STEP 02</span>
+<p class="font-headline-sm text-headline-sm font-semibold mt-1 text-on-surface">온라인 코테</p>
+<p class="font-mono-metric text-mono-metric text-slate-muted mt-1">05.24 (토) 14시</p>
+</div>
+<div class="mt-space-md pt-space-xs text-slate-muted font-label-caps text-label-caps">
+                프로그래머스
+              </div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-bright p-space-md rounded-lg flex flex-col justify-between">
+<div>
+<span class="font-mono-badge text-mono-badge text-slate-muted uppercase">STEP 03</span>
+<p class="font-headline-sm text-headline-sm font-semibold mt-1 text-on-surface">1차 기술 면접</p>
+<p class="font-mono-metric text-mono-metric text-slate-muted mt-1">6월 초순</p>
+</div>
+<div class="mt-space-md pt-space-xs text-slate-muted font-label-caps text-label-caps">
+                CS &amp; 라이브 코딩
+              </div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-bright p-space-md rounded-lg flex flex-col justify-between">
+<div>
+<span class="font-mono-badge text-mono-badge text-slate-muted uppercase">STEP 04</span>
+<p class="font-headline-sm text-headline-sm font-semibold mt-1 text-on-surface">2차 임원 면접</p>
+<p class="font-mono-metric text-mono-metric text-slate-muted mt-1">6월 중순</p>
+</div>
+<div class="mt-space-md pt-space-xs text-slate-muted font-label-caps text-label-caps">
+                컬처핏 / 직무 인성
+              </div>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface-bright p-space-md rounded-lg flex flex-col justify-between">
+<div>
+<span class="font-mono-badge text-mono-badge text-slate-muted uppercase">STEP 05</span>
+<p class="font-headline-sm text-headline-sm font-semibold mt-1 text-on-surface">최종 합격</p>
+<p class="font-mono-metric text-mono-metric text-slate-muted mt-1">7월 초순 입사</p>
+</div>
+<div class="mt-space-md pt-space-xs text-match-green font-label-caps text-label-caps font-semibold">
+                정규 입사 확정
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. 근무 환경 및 복리후생 -->
+<section class="bg-surface rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">workspace_premium</span>
+<span>근무 환경 및 개발자 복리후생</span>
+</h2>
+<span class="font-mono-badge text-mono-badge text-slate-muted">BENEFITS &amp; CULTURE</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="material-symbols-outlined text-secondary text-2xl">home_work</span>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">하이브리드 근무제</p>
+<p class="font-body-sm text-body-sm text-slate-muted">주 2~3회 자율 재택 및 원격 근무 옵션 지원</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="material-symbols-outlined text-secondary text-2xl">laptop_mac</span>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">최고급 장비 지원</p>
+<p class="font-body-sm text-body-sm text-slate-muted">M3 Max 맥북 프로 16인치 및 듀얼 4K 모니터 세팅</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="material-symbols-outlined text-secondary text-2xl">credit_card</span>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">복지포인트 연 200만</p>
+<p class="font-body-sm text-body-sm text-slate-muted">네이버페이 포인트 전환 및 자기계발 비용 전액 지원</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="material-symbols-outlined text-secondary text-2xl">restaurant</span>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">식대 및 사내 카페</p>
+<p class="font-body-sm text-body-sm text-slate-muted">조식·중식·석식 무료 제공 및 사내 바리스타 라운지</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (프로필 매칭 정밀 분석 분석 카드) ~35% -->
+<div class="lg:col-span-5 xl:col-span-4 flex flex-col gap-space-lg">
+<!-- Match Analysis Main Card -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm">
+<!-- Card Header with Calibration Tag -->
+<div class="pb-space-sm mb-space-md">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-match-green font-mono-badge text-mono-badge font-bold uppercase tracking-wider">CALIBRATION ALGORITHM v3.4</span>
+<span class="material-symbols-outlined text-match-green text-lg">auto_awesome</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">김민우 님의 프로필 매칭 정밀 분석</h2>
+<p class="font-body-sm text-body-sm text-slate-muted">한국대 컴공 이수 과목 및 등록 포트폴리오 기반</p>
+</div>
+<!-- 1. 종합 적합도 서클 (Overall Match Score Ring) -->
+<div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-low mb-space-md">
+<!-- Circular Progress Ring SVG -->
+<div class="relative w-24 h-24 flex items-center justify-center flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="42" stroke="#E3E8EF" stroke-width="8"></circle>
+<!-- 96% of 2*pi*42 (~263.89) = 253.33 -->
+<circle cx="50" cy="50" fill="none" r="42" stroke="#16A34A" stroke-dasharray="263.89" stroke-dashoffset="10.55" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-lg text-headline-lg font-black text-match-green tracking-tight leading-none">96<span class="text-sm font-semibold">%</span></span>
+<span class="font-mono-badge text-mono-badge text-slate-muted font-medium mt-0.5">MATCH</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps text-match-green font-bold bg-white px-2 py-0.5 rounded w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-match-green"></span>
+              초근접 최적 매칭 티어
+            </span>
+<p class="font-headline-sm text-headline-sm text-primary font-bold mt-1">지원 합격 안정권</p>
+<p class="font-body-sm text-body-sm text-slate-muted leading-tight mt-0.5">
+              컴퓨터공학과 전공 요건 100% 충족 및 필수 스택 5개 전부 완벽 매칭
+            </p>
+</div>
+</div>
+<!-- Match Score Breakdown Bars -->
+<div class="flex flex-col gap-2.5 mb-space-lg">
+<div>
+<div class="flex items-center justify-between font-label-caps text-label-caps mb-1">
+<span class="text-on-surface-variant">전공 / 학점 적합도 (CS 핵심 5과목 이수)</span>
+<span class="font-mono-metric text-mono-metric text-match-green font-bold">98%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-match-green rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between font-label-caps text-label-caps mb-1">
+<span class="text-on-surface-variant">필수 기술 스택 일치도 (Java, Spring, MySQL, Kafka)</span>
+<span class="font-mono-metric text-mono-metric text-match-green font-bold">100%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-match-green rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between font-label-caps text-label-caps mb-1">
+<span class="text-on-surface-variant">프로젝트 / 실무 경험 가산점</span>
+<span class="font-mono-metric text-mono-metric text-match-green font-bold">90%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-match-green rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+<!-- 2. 요구 기술 스택 vs 내 프로필 대조 리스트 -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">checklist_rtl</span>
+<span>요구 기술 스택 vs 내 프로필 대조</span>
+</h3>
+<span class="font-mono-badge text-mono-badge text-slate-muted">7/8 충족</span>
+</div>
+<div class="flex flex-col divide-y divide-hairline-border rounded-lg bg-surface-bright overflow-hidden">
+<!-- Row 1: Java 21 -->
+<div class="p-2.5 flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 bg-primary text-white font-mono-badge text-mono-badge rounded">필수</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Java 21 / OOP 객체지향</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5 truncate">포트폴리오: 스프링 기반 이커머스 (전공 A+)</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-match-green font-mono-badge text-mono-badge font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> 보유
+              </span>
+</div>
+<!-- Row 2: Spring Boot 3.x -->
+<div class="p-2.5 flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 bg-primary text-white font-mono-badge text-mono-badge rounded">필수</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Spring Boot 3.x / WebFlux</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5 truncate">보유 메인 기술 스택 등록</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-match-green font-mono-badge text-mono-badge font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> 보유
+              </span>
+</div>
+<!-- Row 3: MySQL / DB Optimization -->
+<div class="p-2.5 flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 bg-primary text-white font-mono-badge text-mono-badge rounded">필수</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">MySQL / DB 트랜잭션 튜닝</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5 truncate">과목 이수: 데이터베이스설계 (A0)</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-match-green font-mono-badge text-mono-badge font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> 보유
+              </span>
+</div>
+<!-- Row 4: CS Core (OS & Network) -->
+<div class="p-2.5 flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 bg-primary text-white font-mono-badge text-mono-badge rounded">필수</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">OS / 네트워크 CS 기초</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5 truncate">운영체제(A+), 컴퓨터네트워크(A+)</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-match-green font-mono-badge text-mono-badge font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> 보유
+              </span>
+</div>
+<!-- Row 5: Apache Kafka -->
+<div class="p-2.5 flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 bg-surface-container-high text-primary font-mono-badge text-mono-badge rounded">우대</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Apache Kafka 메시징</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5 truncate">프로젝트: 분산 주문정산 이벤트 브로커</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-match-green font-mono-badge text-mono-badge font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> 보유
+              </span>
+</div>
+<!-- Row 6: Redis -->
+<div class="p-2.5 flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 bg-surface-container-high text-primary font-mono-badge text-mono-badge rounded">우대</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Redis / 캐싱 전략</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5 truncate">JWT 세션 분산 저장 및 Cache Aside 패턴</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-match-green font-mono-badge text-mono-badge font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> 보유
+              </span>
+</div>
+<!-- Row 7: Elasticsearch (부족) -->
+<div class="p-2.5 flex items-center justify-between gap-2 bg-red-50/50">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 bg-surface-container-high text-primary font-mono-badge text-mono-badge rounded">우대</span>
+<span class="font-body-sm text-body-sm font-semibold text-alert-red truncate">Elasticsearch 검색엔진</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-alert-red mt-0.5 truncate">학습 권장: 자소서 코칭 가이드 키워드 참조</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-red-100 text-alert-red font-mono-badge text-mono-badge font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-xs">close</span> 부족
+              </span>
+</div>
+<!-- Row 8: Docker / Kubernetes -->
+<div class="p-2.5 flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.2 bg-surface-container-high text-primary font-mono-badge text-mono-badge rounded">우대</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Docker / Kubernetes 컨테이너</span>
+</div>
+<span class="font-mono-badge text-mono-badge text-slate-muted mt-0.5 truncate">Docker Compose 배포 및 k8s Pod 구성 실습</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-match-green font-mono-badge text-mono-badge font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> 보유
+              </span>
+</div>
+</div>
+</div>
+<!-- 3. 지원 전략 코칭 인사이트 (Actionable AI Recommendations) -->
+<div class="p-space-md rounded-xl bg-surface-container-low mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-info-blue font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lightbulb</span> AI 맞춤 합격 전략 코칭 [F-66]
+            </span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">JOBFILTER COACH</span>
+</div>
+<div class="flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="p-2.5 rounded-lg bg-surface shadow-2xs">
+<p class="font-semibold text-primary flex items-center gap-1">
+<span>💡</span> <strong>자소서 1번 문항 강조 포인트</strong>
+</p>
+<p class="text-on-surface-variant mt-1 leading-snug">
+                포트폴리오의 <em>‘분산 주문 정산 시스템’</em> 프로젝트에서 발생했던 <strong>MySQL 비관적 락 데드락 이슈를 Kafka 이벤트 브로커로 비동기 전환</strong>하여 트랜잭션을 분리한 구체적 수치를 네이버 검색 인덱싱 처리량과 결부시켜 기술하세요.
+              </p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface shadow-2xs">
+<p class="font-semibold text-amber-warning flex items-center gap-1">
+<span>⚠️</span> <strong>면접 및 코딩테스트 보완 권장</strong>
+</p>
+<p class="text-on-surface-variant mt-1 leading-snug">
+                Elasticsearch 실무 경험이 비어 있으므로, <strong>역색인(Inverted Index) 구조</strong>와 Lucene 내부 동작 및 B+Tree 색인과의 비교를 사전 정리하여 기술 면접에 대비할 것을 권장합니다.
+              </p>
+</div>
+</div>
+<a class="mt-1 w-full inline-flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-secondary text-white font-headline-sm text-headline-sm font-semibold hover:bg-secondary-container transition-colors shadow-sm" href="#">
+<span>이 공고 전용 자소서 코칭 시작하기</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- 4. 유사 추천 공고 미니 위젯 -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps text-slate-muted uppercase font-bold">SIMILAR RECOMMENDATIONS</span>
+<a class="font-body-sm text-body-sm text-secondary hover:underline" href="#">전체보기</a>
+</div>
+<!-- Mini Card 1 -->
+<a class="p-space-sm rounded-lg bg-surface-bright hover:bg-surface-container-high transition-colors flex items-center justify-between" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded bg-blue-600 text-white flex items-center justify-center font-bold text-xs flex-shrink-0">T</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">토스증권 · 코어 백엔드 개발자</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">대규모 트랜잭션 · 신입</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0 pl-2">
+<span class="font-mono-metric text-mono-metric font-bold text-match-green">92% 일치</span>
+<span class="font-label-caps text-label-caps text-slate-muted">D-5</span>
+</div>
+</a>
+<!-- Mini Card 2 -->
+<a class="p-space-sm rounded-lg bg-surface-bright hover:bg-surface-container-high transition-colors flex items-center justify-between" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded bg-[#FEE500] text-black flex items-center justify-center font-bold text-xs flex-shrink-0">pay</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">카카오페이 · 정산 플랫폼 개발자</span>
+<span class="font-mono-badge text-mono-badge text-slate-muted">Kafka/Spring · 신입</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0 pl-2">
+<span class="font-mono-metric text-mono-metric font-bold text-match-green">89% 일치</span>
+<span class="font-label-caps text-label-caps text-slate-muted">D-8</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Toast Notification Container (Dynamic Client State) -->
+<div class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 z-50 bg-primary text-white px-4 py-3 rounded-lg shadow-xl flex items-center gap-2 font-body-sm text-body-sm" id="toast-message">
+<span class="material-symbols-outlined text-match-green text-lg">check_circle</span>
+<span id="toast-text">지원 관리 칸반보드 '서류 준비' 컬럼에 등록되었습니다.</span>
+</div>
+</div>
+<script>
+  let isBookmarked = false;
+  let isKanbanAdded = false;
+
+  function toggleBookmark() {
+    isBookmarked = !isBookmarked;
+    const icon = document.getElementById('bookmark-icon');
+    const text = document.getElementById('bookmark-text');
+    const btn = document.getElementById('bookmark-btn');
+
+    if (isBookmarked) {
+      icon.innerText = 'bookmark';
+      icon.classList.remove('text-slate-muted');
+      icon.classList.add('text-secondary');
+      text.innerText = '스크랩됨 143';
+      showToast('공고가 내 스크랩 보관함에 저장되었습니다.');
+    } else {
+      icon.innerText = 'bookmark_border';
+      icon.classList.remove('text-secondary');
+      icon.classList.add('text-slate-muted');
+      text.innerText = '스크랩 142';
+      showToast('스크랩 보관함에서 해제되었습니다.');
+    }
+  }
+
+  function addToKanban() {
+    const btn = document.getElementById('kanban-add-btn');
+    if (!isKanbanAdded) {
+      isKanbanAdded = true;
+      btn.innerHTML = `<span class="material-symbols-outlined text-lg text-match-green">task_alt</span><span>칸반 등록 완료</span>`;
+      btn.classList.add('bg-emerald-50', 'text-match-green');
+      showToast('지원 관리 칸반보드 [서류 준비] 단계에 추가되었습니다.');
+    } else {
+      showToast('이미 칸반보드에 등록된 공고입니다.');
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast-message');
+    const toastText = document.getElementById('toast-text');
+    toastText.innerText = message;
+    toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+    }, 2800);
+  }
+</script></main></div><script src="app.js?v=5"></script>
+</body></html>

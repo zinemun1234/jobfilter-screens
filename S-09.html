@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CS CareerHub - 규칙 기반 모의면접 (Mock Interview Practice)</title>
+<!-- Material Symbols Outlined literal link -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter,+Pretendard,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#14396b",
+            "tertiary": "#00263e",
+            "on-tertiary-fixed": "#001d31",
+            "ink-charcoal": "#1A1A2E",
+            "on-tertiary-container": "#4babf0",
+            "tertiary-fixed": "#cce5ff",
+            "on-secondary-fixed": "#001a41",
+            "on-error-container": "#93000a",
+            "outline": "#747780",
+            "surface-container-highest": "#dae3f4",
+            "slate-muted": "#5B6472",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-tint": "#3f5f93",
+            "primary-fixed": "#d6e3ff",
+            "on-primary-container": "#85a4dd",
+            "info-blue": "#0284C7",
+            "on-primary-fixed-variant": "#254779",
+            "primary-fixed-dim": "#aac7ff",
+            "on-secondary-fixed-variant": "#004493",
+            "paper-bg": "#F5F7FA",
+            "surface-container-high": "#e0e9f9",
+            "primary": "#00234d",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface": "#FFFFFF",
+            "inverse-primary": "#aac7ff",
+            "surface-container-lowest": "#ffffff",
+            "match-green": "#16A34A",
+            "inverse-on-surface": "#eaf1ff",
+            "on-surface-variant": "#43474f",
+            "hairline-border": "#E3E8EF",
+            "on-background": "#131c28",
+            "secondary-fixed-dim": "#adc6ff",
+            "on-primary-fixed": "#001b3e",
+            "outline-variant": "#c3c6d0",
+            "tertiary-container": "#003d5f",
+            "surface-container-low": "#eff4ff",
+            "secondary": "#0058bb",
+            "surface-container": "#e5eeff",
+            "inverse-surface": "#28313d",
+            "secondary-container": "#1e71e2",
+            "surface-dim": "#d2daeb",
+            "error": "#ba1a1a",
+            "surface-variant": "#dae3f4",
+            "secondary-fixed": "#d8e2ff",
+            "background": "#f8f9ff",
+            "tertiary-fixed-dim": "#93ccff",
+            "on-surface": "#131c28",
+            "on-secondary-container": "#fefcff",
+            "on-tertiary-fixed-variant": "#004b73",
+            "amber-warning": "#D97706",
+            "surface-bright": "#f8f9ff",
+            "alert-red": "#DC2626"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "gutter-compact": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["\"Inter, Pretendard, sans-serif\""],
+            "headline-lg": ["\"Inter, Pretendard, sans-serif\""],
+            "mono-badge": ["\"JetBrains Mono, Consolas, monospace\""],
+            "headline-sm": ["\"Inter, Pretendard, sans-serif\""],
+            "label-caps": ["\"Inter, Pretendard, sans-serif\""],
+            "headline-md": ["\"Inter, Pretendard, sans-serif\""],
+            "body-sm": ["\"Inter, Pretendard, sans-serif\""],
+            "mono-metric": ["\"JetBrains Mono, Consolas, monospace\""],
+            "body-lg": ["\"Inter, Pretendard, sans-serif\""]
+          },
+          "fontSize": {
+            "body-md": ["0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+            "headline-lg": ["1.5rem", { "lineHeight": "2rem", "fontWeight": "700" }],
+            "mono-badge": ["0.6875rem", { "lineHeight": "0.875rem", "fontWeight": "500" }],
+            "headline-sm": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "600" }],
+            "label-caps": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.025em", "fontWeight": "600" }],
+            "headline-md": ["1.125rem", { "lineHeight": "1.625rem", "fontWeight": "700" }],
+            "body-sm": ["0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" }],
+            "mono-metric": ["0.8125rem", { "lineHeight": "1.125rem", "fontWeight": "600" }],
+            "body-lg": ["1rem", { "lineHeight": "1.6rem", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-paper-bg text-on-surface antialiased font-body-md min-h-screen">
+<!-- ==================== SIDE NAV BAR (FROM JSON ANCHOR) ==================== -->
+<aside class="fixed top-0 left-0 h-screen w-60 z-30 bg-surface border-r border-hairline-border">
+<div class="flex flex-col h-full w-60 px-4 py-6 justify-between">
+<!-- Top Brand & Header -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-headline-sm">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">CS CareerHub</h1>
+<p class="font-body-sm text-body-sm text-slate-muted">컴퓨터공학과 취업 포털</p>
+</div>
+</div>
+<!-- Role CTA Button from JSON -->
+<button class="w-full py-2 px-3 bg-surface-container-low hover:bg-surface-container text-secondary font-headline-sm text-body-md rounded-lg flex items-center justify-center gap-2 border border-secondary/20 cursor-pointer active:scale-98 transition-all duration-150">
+<span class="material-symbols-outlined text-secondary" data-icon="search">search</span>
+<span>공고 맞춤 탐색</span>
+</button>
+<!-- Main Nav Items (Item '모의면접' is ACTIVE) -->
+<nav class="flex flex-col gap-1">
+<!-- 대시보드 -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>대시보드</span>
+</a>
+<!-- 공고 목록 -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span>공고 목록</span>
+</a>
+<!-- 지원 관리 -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span>지원 관리</span>
+</a>
+<!-- 자소서 코칭 -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="edit_document">edit_document</span>
+<span>자소서 코칭</span>
+</a>
+<!-- 모의면접 (ACTIVE ITEM) -->
+<a class="flex items-center gap-3 px-3 py-2 bg-surface-container-low text-secondary font-headline-sm text-headline-sm rounded-lg border-l-4 border-secondary cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="record_voice_over" data-weight="fill" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+<span>모의면접</span>
+</a>
+<!-- 프로필 -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span>프로필</span>
+</a>
+</nav>
+</div>
+<!-- Footer Nav Items from JSON -->
+<div class="pt-4 border-t border-hairline-border flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>설정</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low hover:text-on-surface rounded-lg transition-colors duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>고객지원</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ==================== TOP NAV BAR (FROM JSON ANCHOR) ==================== -->
+<header class="sticky top-0 right-0 h-14 z-20 w-full pl-60 bg-surface border-b border-hairline-border">
+<div class="flex items-center justify-between h-14 px-6 w-full">
+<!-- Left: Search & Quick links -->
+<div class="flex items-center gap-6">
+<div class="relative w-72">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-muted text-body-md" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 bg-paper-bg border border-hairline-border rounded-lg text-body-sm focus:outline-none focus:border-secondary transition-colors" placeholder="면접 질문 및 기술 키워드 검색" type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors duration-150" href="#">지원 일정 D-Day</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors duration-150" href="#">기업 채용 공고</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors duration-150" href="#">합격 포트폴리오</a>
+</div>
+</div>
+<!-- Right: Actions & User Info -->
+<div class="flex items-center gap-3">
+<button class="px-3 py-1.5 border border-secondary text-secondary font-headline-sm text-body-sm rounded-lg hover:bg-surface-container-low transition-colors duration-150 cursor-pointer">
+          이력서 PDF 등록
+        </button>
+<button class="px-3 py-1.5 bg-primary-container text-on-primary font-headline-sm text-body-sm rounded-lg hover:bg-primary transition-colors duration-150 flex items-center gap-1.5 cursor-pointer">
+<span class="material-symbols-outlined text-[18px]" data-icon="notifications">notifications</span>
+<span>채용 알림</span>
+</button>
+<div class="h-4 w-px bg-hairline-border mx-1"></div>
+<button class="p-1.5 text-slate-muted hover:text-on-surface rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<button class="p-1.5 text-slate-muted hover:text-on-surface rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+<div class="flex items-center gap-2 pl-2">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-primary flex items-center justify-center font-headline-sm text-label-caps">
+            KM
+          </div>
+<span class="font-headline-sm text-body-sm text-on-surface">김민우 (CS 4학년)</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ==================== MAIN CONTENT CANVAS ==================== -->
+<main class="pl-60 min-h-[calc(100vh-3.5rem)] p-6 bg-paper-bg space-y-6">
+<!-- Top Banner / System Notice -->
+<div class="bg-surface border border-hairline-border rounded-xl p-4 shadow-sm flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-headline-sm text-headline-sm text-ink-charcoal">시스템 안내</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container-low text-secondary border border-secondary/20">규칙 기반 검증기 활성화 [Rule-Engine]</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-muted">
+            JobFilter 모의면접은 생성형 AI가 임의 생성하지 않으며, 검증된 CS 직군별 표준 기술·인성 문항 템플릿과 4대 핵심 구조 체크리스트에 기반하여 진행됩니다.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="text-mono-badge font-mono-badge text-match-green flex items-center gap-1 bg-[#DCFCE7] px-2.5 py-1 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-match-green animate-pulse"></span>
+          실시간 피드백 엔진 가동 중
+        </span>
+</div>
+</div>
+<!-- Section 1: 직군 및 세션 설정 카드 -->
+<section class="bg-surface border border-hairline-border rounded-xl p-5 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Left: 직군 선택 chips -->
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="text-label-caps font-label-caps text-slate-muted uppercase tracking-wider">직군 선택</span>
+<span class="text-mono-badge font-mono-badge text-slate-muted font-normal">[F-66 Job-Track Select]</span>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-full font-headline-sm text-body-sm bg-primary text-on-primary transition-all duration-150 flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+<span>백엔드</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full font-body-md text-body-sm bg-[#ECEFF3] text-ink-charcoal hover:bg-surface-container transition-all duration-150">
+              프론트엔드
+            </button>
+<button class="px-3.5 py-1.5 rounded-full font-body-md text-body-sm bg-[#ECEFF3] text-ink-charcoal hover:bg-surface-container transition-all duration-150">
+              인프라/DevOps
+            </button>
+<button class="px-3.5 py-1.5 rounded-full font-body-md text-body-sm bg-[#ECEFF3] text-ink-charcoal hover:bg-surface-container transition-all duration-150">
+              데이터/AI
+            </button>
+<button class="px-3.5 py-1.5 rounded-full font-body-md text-body-sm bg-[#ECEFF3] text-ink-charcoal hover:bg-surface-container transition-all duration-150">
+              보안
+            </button>
+<button class="px-3.5 py-1.5 rounded-full font-body-md text-body-sm bg-[#ECEFF3] text-ink-charcoal hover:bg-surface-container transition-all duration-150">
+              공통/인성
+            </button>
+</div>
+</div>
+<!-- Right: 세션 메타 정보 & Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 lg:border-l lg:border-hairline-border lg:pl-6">
+<div class="flex items-center gap-5 text-body-sm text-slate-muted">
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-slate-muted">문항 구성</span>
+<span class="font-mono-metric text-mono-metric text-ink-charcoal">3문항 (기본형)</span>
+</div>
+<div class="h-7 w-px bg-hairline-border"></div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-slate-muted">제한 시간</span>
+<span class="font-mono-metric text-mono-metric text-ink-charcoal">문항당 90초 (실전 면접)</span>
+</div>
+<div class="h-7 w-px bg-hairline-border"></div>
+<div class="flex flex-col">
+<span class="text-label-caps font-label-caps text-slate-muted">데이터셋</span>
+<span class="font-mono-metric text-mono-metric text-secondary font-semibold">빈출 120선 수록</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 border border-hairline-border hover:bg-surface-container-low text-on-surface-variant font-headline-sm text-body-sm rounded-lg flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+<span>랜덤 문항 교체</span>
+</button>
+<button class="px-3.5 py-1.5 bg-secondary text-on-secondary hover:bg-secondary-container font-headline-sm text-body-sm rounded-lg flex items-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow">play_arrow</span>
+<span>모의면접 재시작</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Main 2-Column Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Center Session Card (Col 8) -->
+<section class="lg:col-span-8 bg-surface border border-hairline-border rounded-xl shadow-sm flex flex-col">
+<!-- Card Header -->
+<div class="p-5 border-b border-hairline-border flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="px-2.5 py-1 rounded bg-primary-container text-on-primary font-mono-badge text-mono-badge">
+              진행 현황: 문항 1 / 3
+            </span>
+<span class="px-2.5 py-1 rounded bg-[#ECEFF3] text-ink-charcoal font-headline-sm text-body-sm">
+              [백엔드 · 데이터베이스 & 인프라]
+            </span>
+</div>
+<!-- Circular Countdown Timer -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-[#FEF2F2] border border-[#FEE2E2] px-3 py-1 rounded-lg">
+<!-- SVG Mini Ring Timer -->
+<svg class="w-5 h-5 -rotate-90" viewbox="0 0 36 36">
+<path class="text-hairline-border" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-alert-red" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="82, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="flex items-baseline gap-1">
+<span class="text-label-caps font-label-caps text-alert-red font-bold">남은 시간</span>
+<span class="font-mono-metric text-mono-metric text-alert-red font-bold tracking-tight">01:14</span>
+<span class="font-mono-metric text-[11px] text-slate-muted">/ 01:30</span>
+</div>
+</div>
+<button class="p-1.5 border border-hairline-border rounded-lg text-slate-muted hover:text-on-surface hover:bg-surface-container-low transition-colors" title="일시정지">
+<span class="material-symbols-outlined text-[18px]" data-icon="pause">pause</span>
+</button>
+<button class="p-1.5 border border-hairline-border rounded-lg text-slate-muted hover:text-on-surface hover:bg-surface-container-low transition-colors" title="시간 리셋">
+<span class="material-symbols-outlined text-[18px]" data-icon="replay">replay</span>
+</button>
+</div>
+</div>
+<!-- Question Prompt Area -->
+<div class="p-5 bg-surface-container-low/50 border-b border-hairline-border space-y-3">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-[#FEE2E2] text-alert-red font-semibold border border-alert-red/20">
+              Q1 [난이도: 상 | 빈출도 94%]
+            </span>
+<span class="text-label-caps font-label-caps text-slate-muted">면접관 빈출 표준 질의 템플릿 DB-04</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-ink-charcoal leading-relaxed font-bold">
+            대용량 트래픽 환경에서 RDBMS와 NoSQL을 선정한 기준과, 인덱스(B-Tree) 설계 시 겪었던 슬로우 쿼리 트러블슈팅 경험을 설명해주세요.
+          </h2>
+<div class="flex items-center gap-2 text-body-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[18px]" data-icon="tips_and_updates">tips_and_updates</span>
+<span>답변 가이드: STAR 프레임워크(상황-과제-행동-결과)를 적용하고 정량적 개선 지표(p99 응답시간, TPS 등)를 명시하세요.</span>
+</div>
+</div>
+<!-- Answer Textarea Area -->
+<div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+<div class="space-y-2">
+<div class="flex items-center justify-between text-body-sm">
+<label class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5" for="interview-answer">
+<span>실시간 구술/텍스트 답변 입력</span>
+<span class="text-mono-badge font-mono-badge text-match-green font-normal bg-[#DCFCE7] px-2 py-0.5 rounded">STAR 구조 입력 감지 중</span>
+</label>
+<span class="font-mono-metric text-mono-metric text-slate-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-match-green" data-icon="cloud_done">cloud_done</span>
+                자동 임시 저장 완료 (14:24:02)
+              </span>
+</div>
+<textarea class="w-full p-4 bg-surface border border-hairline-border rounded-lg text-body-md text-ink-charcoal font-body-md leading-relaxed focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all resize-none shadow-inner" id="interview-answer" rows="9">[결론 및 원칙] 주문 결제와 같이 엄격한 ACID 트랜잭션 정합성이 필요한 도메인은 MySQL(InnoDB)을, 대규모 실시간 세션 및 조회 로그 캐싱에는 Redis와 MongoDB를 복합 채택했습니다. [상황 및 문제] 동시 접속자 1만 명 트래픽 부하 테스트 중, 주문 조회 API의 p99 응답 지연이 1,800ms까지 급증하는 병목을 확인했습니다. [원인 분석 및 해결] EXPLAIN을 실행하여 member_id와 created_at 복합 인덱스 누락으로 인한 Full Table Scan 및 Filesort 유발을 규명했습니다. B-Tree 카디널리티가 높은 member_id를 선두 칼럼으로 한 복합 인덱스를 적용하여 인덱스 레인지 스캔을 유도했습니다. [결과] 슬로우 쿼리 실행 시간을 1,800ms에서 42ms로 97.6% 단축했습니다.</textarea>
+</div>
+<!-- Counter & Controls Footer -->
+<div class="pt-3 border-t border-hairline-border flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="font-mono-metric text-mono-metric text-ink-charcoal font-bold">438자</span>
+<span class="text-body-sm text-slate-muted">/ 권장 300~500자</span>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-[#DCFCE7] text-match-green font-semibold">적정 분량</span>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="px-3 py-2 border border-hairline-border hover:bg-surface-container-low text-ink-charcoal font-headline-sm text-body-sm rounded-lg flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-alert-red" data-icon="mic">mic</span>
+<span>음성 녹음 지원 (로컬 브라우저 STT 준비)</span>
+</button>
+<button class="px-4 py-2 bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-body-sm rounded-lg flex items-center gap-1.5 transition-colors shadow-sm">
+<span>답변 저장 후 다음 문항</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Self Checklist Panel (Col 4) -->
+<aside class="lg:col-span-4 bg-surface border border-hairline-border rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Checklist Header -->
+<div class="p-5 border-b border-hairline-border bg-surface flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="fact_check">fact_check</span>
+<h3 class="font-headline-sm text-headline-sm text-ink-charcoal">실전 답변 자가 체크리스트</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container-low text-secondary border border-secondary/20">
+            필수 점검
+          </span>
+</div>
+<!-- Progress Gauge Bar -->
+<div class="px-5 py-4 bg-surface-container-low/30 border-b border-hairline-border space-y-2">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-slate-muted font-medium">현재 체크 달성률</span>
+<span class="font-mono-metric text-mono-metric text-secondary font-bold">3 / 4 항목 충족 (75%)</span>
+</div>
+<div class="w-full bg-[#E3E8EF] h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-300" style="width: 75%"></div>
+</div>
+</div>
+<!-- 4 Key Checklist Items -->
+<div class="p-5 space-y-3.5 flex-1">
+<!-- Item 1: Complete -->
+<div class="p-3 bg-surface border border-hairline-border rounded-lg space-y-1.5 transition-colors hover:border-slate-300">
+<div class="flex items-start justify-between gap-2">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-secondary focus:ring-secondary w-4 h-4 border-hairline-border" type="checkbox"/>
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold">1. 두괄식 구성 (결론/키워드 선두)</span>
+</label>
+<span class="text-mono-badge font-mono-badge text-match-green bg-[#DCFCE7] px-1.5 py-0.5 rounded">충족</span>
+</div>
+<p class="text-body-sm text-slate-muted pl-6">
+              "질문의 핵심에 대한 결론을 첫 문장에서 명확히 제시했는가?"
+            </p>
+</div>
+<!-- Item 2: Complete -->
+<div class="p-3 bg-surface border border-hairline-border rounded-lg space-y-1.5 transition-colors hover:border-slate-300">
+<div class="flex items-start justify-between gap-2">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-secondary focus:ring-secondary w-4 h-4 border-hairline-border" type="checkbox"/>
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold">2. 수치·정량 근거 포함 (Metric Based)</span>
+</label>
+<span class="text-mono-badge font-mono-badge text-match-green bg-[#DCFCE7] px-1.5 py-0.5 rounded">충족</span>
+</div>
+<p class="text-body-sm text-slate-muted pl-6">
+              "트래픽 규모, TPS 향상치, 응답 지연 단축률(%) 등 수치가 있는가?"
+            </p>
+</div>
+<!-- Item 3: Incomplete -->
+<div class="p-3 bg-[#FEF2F2]/40 border border-[#FECACA] rounded-lg space-y-1.5 transition-colors">
+<div class="flex items-start justify-between gap-2">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input class="mt-0.5 rounded text-secondary focus:ring-secondary w-4 h-4 border-hairline-border" type="checkbox"/>
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold">3. STAR 구조 준수 (기술 의사결정)</span>
+</label>
+<span class="text-mono-badge font-mono-badge text-alert-red bg-[#FEE2E2] px-1.5 py-0.5 rounded font-bold">보완 필요</span>
+</div>
+<p class="text-body-sm text-slate-muted pl-6">
+              "단순 지식 나열이 아닌 실제 겪은 기술적 의사결정 과정인가?"
+            </p>
+</div>
+<!-- Item 4: Complete -->
+<div class="p-3 bg-surface border border-hairline-border rounded-lg space-y-1.5 transition-colors hover:border-slate-300">
+<div class="flex items-start justify-between gap-2">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-secondary focus:ring-secondary w-4 h-4 border-hairline-border" type="checkbox"/>
+<span class="font-headline-sm text-body-sm text-ink-charcoal font-semibold">4. 90초 제한시간 내 마무리</span>
+</label>
+<span class="text-mono-badge font-mono-badge text-match-green bg-[#DCFCE7] px-1.5 py-0.5 rounded">충족</span>
+</div>
+<p class="text-body-sm text-slate-muted pl-6">
+              "장황한 서론 없이 1분 30초 내에 완결된 문장으로 맺었는가?"
+            </p>
+</div>
+</div>
+<!-- Interviewer Tips (Card Bottom) -->
+<div class="p-4 bg-[#F0F6FF] border-t border-[#CBD5E1] space-y-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="lightbulb">lightbulb</span>
+<span class="font-headline-sm text-label-caps text-secondary font-bold">면접관 관점 정밀 코칭 팁</span>
+</div>
+<ul class="text-body-sm text-on-surface-variant space-y-1.5 pl-1 leading-normal">
+<li class="flex items-start gap-1.5">
+<span class="text-secondary shrink-0">•</span>
+<span>추상적 표현(열심히, 최선을 다해) 대신 사용한 오픈소스 라이브러리와 정확한 버전/옵션을 언급하세요.</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-secondary shrink-0">•</span>
+<span>실패했던 첫 시도(First attempt)와 이를 극복한 벤치마크 결과를 덧붙이면 설득력이 2배 증가합니다.</span>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+<!-- Section 3: Bottom Area - Practice History & Curation Banner -->
+<div class="space-y-6">
+<!-- Recent History Table Card -->
+<section class="bg-surface border border-hairline-border rounded-xl shadow-sm overflow-hidden">
+<div class="p-5 border-b border-hairline-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<h3 class="font-headline-sm text-headline-sm text-ink-charcoal font-bold">최근 모의면접 답변 및 체크 기록</h3>
+<span class="text-mono-badge font-mono-badge text-slate-muted bg-paper-bg border border-hairline-border px-2.5 py-1 rounded">누적 14회 완료</span>
+</div>
+<button class="px-3 py-1.5 border border-hairline-border hover:bg-paper-bg text-on-surface-variant font-headline-sm text-body-sm rounded-lg flex items-center gap-1.5 self-start sm:self-auto transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="file_download">file_download</span>
+<span>CSV 내보내기</span>
+</button>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b border-hairline-border text-label-caps font-label-caps text-slate-muted">
+<th class="py-3 px-5 font-semibold">직군</th>
+<th class="py-3 px-5 font-semibold">문항 및 질문 요약</th>
+<th class="py-3 px-5 font-semibold text-center">답변 소요시간</th>
+<th class="py-3 px-5 font-semibold text-center">충족 체크 항목</th>
+<th class="py-3 px-5 font-semibold text-center">연습일시</th>
+<th class="py-3 px-5 font-semibold text-right">다시 연습</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-hairline-border text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors h-11">
+<td class="py-3 px-5">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container-low text-secondary font-semibold">백엔드</span>
+</td>
+<td class="py-3 px-5 font-medium text-ink-charcoal">
+                  RDBMS vs NoSQL 선정 및 인덱스 튜닝 (B-Tree 복합 인덱스 카디널리티 고려)
+                </td>
+<td class="py-3 px-5 font-mono-metric text-mono-metric text-center text-ink-charcoal">01:22</td>
+<td class="py-3 px-5 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-mono-badge font-mono-badge bg-[#DCFCE7] text-match-green font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                    4/4개 완료 (100%)
+                  </span>
+</td>
+<td class="py-3 px-5 font-mono-metric text-mono-metric text-center text-slate-muted">2025-05-16 14:20</td>
+<td class="py-3 px-5 text-right">
+<button class="px-2.5 py-1 text-label-caps font-label-caps text-secondary hover:bg-surface-container-low rounded border border-secondary/20 transition-colors">
+                    재도전
+                  </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors h-11">
+<td class="py-3 px-5">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-[#ECEFF3] text-ink-charcoal font-semibold">인프라/DevOps</span>
+</td>
+<td class="py-3 px-5 font-medium text-ink-charcoal">
+                  Docker 멀티 스테이지 빌드 및 CI/CD 파이프라인 최적화
+                </td>
+<td class="py-3 px-5 font-mono-metric text-mono-metric text-center text-ink-charcoal">01:28</td>
+<td class="py-3 px-5 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-mono-badge font-mono-badge bg-[#FEF3C7] text-amber-warning font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                    3/4개 완료 (75%)
+                  </span>
+</td>
+<td class="py-3 px-5 font-mono-metric text-mono-metric text-center text-slate-muted">2025-05-15 19:10</td>
+<td class="py-3 px-5 text-right">
+<button class="px-2.5 py-1 text-label-caps font-label-caps text-secondary hover:bg-surface-container-low rounded border border-secondary/20 transition-colors">
+                    재도전
+                  </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors h-11">
+<td class="py-3 px-5">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container-low text-secondary font-semibold">백엔드</span>
+</td>
+<td class="py-3 px-5 font-medium text-ink-charcoal">
+                  Spring Bean Lifecycle 및 싱글톤 스코프 이슈와 동시성 제어
+                </td>
+<td class="py-3 px-5 font-mono-metric text-mono-metric text-center text-ink-charcoal">01:15</td>
+<td class="py-3 px-5 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-mono-badge font-mono-badge bg-[#DCFCE7] text-match-green font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                    4/4개 완료 (100%)
+                  </span>
+</td>
+<td class="py-3 px-5 font-mono-metric text-mono-metric text-center text-slate-muted">2025-05-14 11:05</td>
+<td class="py-3 px-5 text-right">
+<button class="px-2.5 py-1 text-label-caps font-label-caps text-secondary hover:bg-surface-container-low rounded border border-secondary/20 transition-colors">
+                    재도전
+                  </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#F8FAFC] transition-colors h-11">
+<td class="py-3 px-5">
+<span class="px-2 py-0.5 rounded text-mono-badge font-mono-badge bg-[#ECEFF3] text-ink-charcoal font-semibold">공통/인성</span>
+</td>
+<td class="py-3 px-5 font-medium text-ink-charcoal">
+                  팀 프로젝트 갈등 해결 및 기술 의견 조율 경험 (REST vs gRPC 도입)
+                </td>
+<td class="py-3 px-5 font-mono-metric text-mono-metric text-center text-alert-red font-bold">01:35 (초과)</td>
+<td class="py-3 px-5 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-mono-badge font-mono-badge bg-[#FEE2E2] text-alert-red font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span>
+                    2/4개 완료 (50%)
+                  </span>
+</td>
+<td class="py-3 px-5 font-mono-metric text-mono-metric text-center text-slate-muted">2025-05-12 16:40</td>
+<td class="py-3 px-5 text-right">
+<button class="px-2.5 py-1 text-label-caps font-label-caps text-secondary hover:bg-surface-container-low rounded border border-secondary/20 transition-colors">
+                    재도전
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bottom Recommended Practice Banner (Curation Banner) -->
+<section class="bg-gradient-to-r from-primary-container to-secondary rounded-xl p-6 text-on-primary shadow-md flex flex-col md:flex-row items-center justify-between gap-6 border border-hairline-border">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded text-mono-badge font-mono-badge bg-surface-container-lowest/20 text-on-primary border border-white/20 font-semibold">
+              지원 현황 맞춤 큐레이션 세트 [서류합격 반영]
+            </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl">🎯</span>
+<p class="font-headline-sm text-headline-sm text-on-primary font-medium leading-relaxed">
+<span class="font-bold underline decoration-white/40 underline-offset-4">김민우 님의 지원 현황 기반 추천:</span> 
+              이번 주 서류 합격한 <strong class="text-primary-fixed font-bold">[네이버 검색 CIC - 검색 플랫폼 분산 백엔드]</strong> 공고 맞춤 '분산 트랜잭션 & Kafka' 모의면접 세트가 준비되어 있습니다.
+            </p>
+</div>
+</div>
+<button class="shrink-0 px-5 py-2.5 bg-surface text-primary hover:bg-paper-bg font-headline-sm text-headline-sm rounded-lg flex items-center gap-2 transition-all shadow cursor-pointer">
+<span>추천 세트 바로 시작하기</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</div>
+</main>
+<script>
+    // Lightweight interaction for checklist checkbox sync
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+        console.log(`체크리스트 충족 개수: ${checkedCount}/4`);
+      });
+    });
+  </script>
+<script src="app.js?v=5"></script>
+</body></html>
