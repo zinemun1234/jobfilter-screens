@@ -1611,28 +1611,34 @@
     ];
     var qIdx = 0;
     var qHeadline = $$('h2').filter(function (h) { return /설명해주세요|답변해주세요/.test(h.textContent); })[0];
-    var qBadge = $$('span').filter(function (s) { return /^Q\d+\s*\[/.test(s.textContent.trim()); })[0];
+    var qBadge = $$('span,button').filter(function (s) { return /\[\s*Q-?\d+\s*\]/.test(s.textContent.trim()); })[0];
     function swapQuestion(random) {
       if (!qHeadline) return;
       if (random) qIdx = Math.floor(Math.random() * Q_POOL.length);
-      qHeadline.textContent = Q_POOL[qIdx % Q_POOL.length];
-      if (qBadge) qBadge.innerHTML = qBadge.innerHTML.replace(/Q\d+/, 'Q' + ((qIdx % Q_POOL.length) + 1));
+      qHeadline.textContent = '"' + Q_POOL[qIdx % Q_POOL.length] + '"';
+      if (qBadge) qBadge.innerHTML = qBadge.innerHTML.replace(/Q-?\d+/, 'Q-' + ((qIdx % Q_POOL.length) + 1));
       jfToast('문항을 교체했습니다. (DB-' + ((qIdx % Q_POOL.length) + 1).toString().padStart(2, '0') + ')');
     }
 
     /* ---- 답변 글자수 실시간 카운터 ---- */
-    var ans = $('#interview-answer');
+    var ans = $('#answer-input') || $('#interview-answer');
     if (ans) {
       ans.addEventListener('input', function () {
         var len = ans.value.replace(/\s/g, '').length;
-        var numEl = $$('span').filter(function (s) { return /^\s*\d+자\s*$/.test(s.textContent); })[0];
-        if (numEl) numEl.textContent = len + '자';
-        var verdict = $$('span').filter(function (s) { return /적정 분량|분량 부족|분량 초과/.test(s.textContent) && s.textContent.length < 12; })[0];
+        var numEl = $('#char-count') || $$('span').filter(function (s) { return /^\s*\d+자?\s*$/.test(s.textContent); })[0];
+        if (numEl) numEl.textContent = String(len);
+        var verdict = $$('span').filter(function (s) { return /적정 분량|분량 부족|분량 초과/.test(s.textContent) && s.textContent.trim().length < 12; })[0];
         if (verdict) {
           var ok = len >= 300 && len <= 500;
-          verdict.textContent = len < 300 ? '분량 부족' : ok ? '적정 분량' : '분량 초과';
+          verdict.textContent = len < 300 ? '분량 부족' : ok ? '적정 분량 충족됨' : '분량 초과';
+          var wrap = verdict.closest('div');
+          if (wrap) {
+            wrap.classList.toggle('text-match-green', ok);
+            wrap.classList.toggle('text-amber-warning', !ok);
+          }
         }
       });
+      ans.dispatchEvent(new Event('input'));
     }
     function start() { if (!timerId) timerId = setInterval(tick, 1000); running = true; }
     function stop() { running = false; }
@@ -1674,7 +1680,6 @@
               qIdx++;
               swapQuestion(false);
               remain = totalSec; paint();
-              var ans = $('#interview-answer');
               if (ans) { ans.value = ''; ans.dispatchEvent(new Event('input')); }
               jfToast('답변이 저장되었습니다. 문항 ' + (cur + 1) + '로 이동합니다.');
             } else {
@@ -1704,19 +1709,31 @@
       }
     });
 
-    /* ---- 직군 칩 토글 (백엔드/프론트엔드/인프라·DevOps/데이터·AI/보안/공통·인성) ---- */
-    $$('main button').forEach(function (b) {
-      var t = b.textContent.replace(/\s+/g, ' ').trim();
+    /* ---- 직군 칩 토글 ---- */
+    var chips = $$('#track-selector button');
+    if (!chips.length) {
+      chips = $$('main button').filter(function (b) {
+        return /^(check\s*)?(백엔드|프론트엔드|인프라.?DevOps|데이터.?AI|보안|공통.?인성)/.test(b.textContent.replace(/\s+/g, ' ').trim());
+      });
+    }
+    chips.forEach(function (b) {
       if (b.dataset.jfBound) return;
-      if (!/^(check\s*)?(백엔드|프론트엔드|인프라.?DevOps|데이터.?AI|보안|공통.?인성)$/.test(t)) return;
       b.dataset.jfBound = '1';
       b.addEventListener('click', function () {
-        var on = b.classList.toggle('bg-primary-container');
+        var on = !b.classList.contains('bg-primary-container');
+        b.classList.toggle('bg-primary-container', on);
         b.classList.toggle('text-on-primary', on);
+        b.classList.toggle('shadow-sm', on);
+        b.classList.toggle('text-ink-charcoal', !on);
         b.classList.toggle('bg-surface-container-high', !on);
         var chk = b.querySelector('.material-symbols-outlined, [data-icon]');
-        if (chk) chk.textContent = on ? 'check' : 'add';
-        jfToast('"' + t.replace(/^(check|add)\s*/, '') + '" 직군 문항 풀 ' + (on ? '포함' : '제외') + ' — 랜덤 문항 교체에 반영됩니다.');
+        if (on && !chk) {
+          chk = document.createElement('span');
+          chk.className = 'material-symbols-outlined text-[16px]';
+          b.prepend(chk);
+        }
+        if (chk) { chk.style.display = on ? '' : 'none'; chk.textContent = 'check'; }
+        jfToast('"' + b.textContent.replace(/\s+/g, ' ').replace(/check|add/g, '').trim() + '" 직군 문항 풀 ' + (on ? '포함' : '제외'));
       });
     });
 
