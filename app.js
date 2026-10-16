@@ -199,12 +199,14 @@
           jfToast('페이지 이동 — 데모 데이터는 1페이지 분량입니다.');
         } else if (/^(tune|more_horiz)$/.test(iconOnly) || /filter_list/.test(iconOnly)) {
           jfToast('세부 필터/메뉴는 데모 범위 외입니다.');
-        } else if (/^bookmark/.test(iconOnly)) {
-          var on = iconEl.textContent.trim() !== 'bookmark';
-          iconEl.textContent = on ? 'bookmark' : 'bookmark_border';
-          iconEl.classList.toggle('text-amber-warning', on);
-          jfToast(on ? '스크랩에 추가했습니다.' : '스크랩을 해제했습니다.');
-        } else if (txt.length < 30 && !/^(close|add|drag_indicator|bookmark)/.test(txt)) {
+        } else if (/^(bookmark|star)/.test(iconOnly)) {
+          var ic = iconEl.textContent.trim();
+          var filled = /^(bookmark|bookmark_added|star)$/.test(ic);
+          iconEl.textContent = filled ? 'star_border' : 'star';
+          if (/^bookmark/.test(iconOnly)) iconEl.textContent = filled ? 'bookmark_border' : 'bookmark';
+          iconEl.classList.toggle('text-amber-warning', !filled);
+          jfToast(!filled ? '스크랩에 추가했습니다.' : '스크랩을 해제했습니다.');
+        } else if (txt.length < 30 && !/^(close|add|drag_indicator|bookmark|star)/.test(txt)) {
           jfToast('"' + txt + '" — 데모에서는 생략된 보조 기능입니다.');
         }
       }
@@ -226,7 +228,11 @@
 
   /* ============================ S-01 대시보드 ============================ */
   function initS01() {
-    // 북마크 토글은 파일 내 인라인 스크립트가 담당 (중복 바인딩 방지)
+    // 북마크 토글은 파일 내 인라인 스크립트가 담당 — 위임 핸들러와 이중 토글 방지용 jfBound 표시
+    $$('button').forEach(function (b) {
+      var ic = b.querySelector('.material-symbols-outlined');
+      if (ic && /^bookmark/.test(ic.textContent.trim())) b.dataset.jfBound = '1';
+    });
 
     // '이력서·희망직무 업데이트' 등 동기화 버튼
     $$('button').forEach(function (b) {
