@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JobFilter 프로젝트 보고서 — Stitch 화면 인터랙티브 프로토타입</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2314396B%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27sans-serif%27 font-size=%2716%27 font-weight=%27bold%27 fill=%27white%27 text-anchor=%27middle%27%3EJ%3C/text%3E%3C/svg%3E"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter,+Pretendard,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{"primary":"#00234d","primary-container":"#14396b","secondary":"#0058bb","paper-bg":"#F5F7FA","surface":"#FFFFFF","surface-container":"#e5eeff","surface-container-low":"#eff4ff","on-surface":"#131c28","on-surface-variant":"#43474f","slate-muted":"#5B6472","match-green":"#16A34A","amber-warning":"#D97706","alert-red":"#DC2626","info-blue":"#0284C7","hairline-border":"#E3E8EF","ink-charcoal":"#1A1A2E"}}}};</script>
+<style>
+  body{font-family:"Pretendard","Inter",sans-serif;-webkit-font-smoothing:antialiased}
+  ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-thumb{background:#c3c6d0;border-radius:8px}
+  h2.section{border-left:4px solid #14396b;padding-left:12px}
+  .fig img{transition:transform .25s ease}
+  .fig:hover img{transform:scale(1.015)}
+  .tag{font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:9999px}
+  table.r th{background:#eff4ff;text-align:left;font-weight:600}
+  table.r th,table.r td{padding:8px 12px;border-bottom:1px solid #E3E8EF;font-size:.86rem}
+  @media print{.no-print{display:none}body{background:#fff}.fig{break-inside:avoid}}
+</style>
+</head>
+<body class="bg-paper-bg text-on-surface min-h-screen">
+
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur border-b border-hairline-border no-print">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-lg bg-primary-container text-white flex items-center justify-center font-black text-sm">J</div>
+      <span class="font-bold text-primary">JobFilter 보고서</span>
+    </div>
+    <div class="flex items-center gap-2 text-xs">
+      <a href="index.html" class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-semibold hover:bg-surface-container-low">화면 갤러리</a>
+      <a href="https://jobfilter-screens.vercel.app" class="px-3 py-1.5 rounded-lg text-slate-muted hover:text-primary">라이브 배포 ↗</a>
+      <a href="https://github.com/zinemun1234/jobfilter-screens" class="px-3 py-1.5 rounded-lg text-slate-muted hover:text-primary">GitHub ↗</a>
+      <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-primary-container text-white font-semibold">PDF로 저장</button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-10 flex flex-col gap-10">
+
+<!-- ============ 표지 ============ -->
+<section class="bg-surface rounded-2xl shadow-sm border border-hairline-border p-10">
+  <div class="flex items-center gap-2 mb-4">
+    <span class="tag bg-surface-container text-secondary">프로젝트 보고서</span>
+    <span class="tag bg-match-green/10 text-match-green">배포 완료</span>
+  </div>
+  <h1 class="text-3xl font-extrabold text-primary tracking-tight">JobFilter — 컴공 채용 포털<br/>인터랙티브 프로토타입 구현 보고서</h1>
+  <p class="mt-3 text-slate-muted leading-relaxed">
+    Google Stitch로 생성된 9개 정적 화면을 <b>공통 인터랙션 레이어(app.js)</b>로 연결하여
+    실제로 동작하는 브라우저 프로토타입으로 구현하고, GitHub·Vercel에 배포한 작업의 보고서입니다.
+  </p>
+  <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+    <div class="bg-surface-container-low rounded-xl p-4"><div class="text-2xl font-extrabold text-primary">9</div><div class="text-xs text-slate-muted mt-1">구현 화면</div></div>
+    <div class="bg-surface-container-low rounded-xl p-4"><div class="text-2xl font-extrabold text-primary">60+</div><div class="text-xs text-slate-muted mt-1">실동작 인터랙션</div></div>
+    <div class="bg-surface-container-low rounded-xl p-4"><div class="text-2xl font-extrabold text-match-green">0</div><div class="text-xs text-slate-muted mt-1">콘솔 에러</div></div>
+    <div class="bg-surface-container-low rounded-xl p-4"><div class="text-2xl font-extrabold text-info-blue">0</div><div class="text-xs text-slate-muted mt-1">무반응 컨트롤</div></div>
+  </div>
+  <div class="mt-6 text-sm flex flex-wrap gap-x-6 gap-y-1 text-slate-muted">
+    <span><b class="text-ink-charcoal">라이브:</b> <a class="text-secondary underline" href="https://jobfilter-screens.vercel.app">jobfilter-screens.vercel.app</a></span>
+    <span><b class="text-ink-charcoal">저장소:</b> <a class="text-secondary underline" href="https://github.com/zinemun1234/jobfilter-screens">github.com/zinemun1234/jobfilter-screens</a></span>
+  </div>
+</section>
+
+<!-- ============ 1. 배경 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">1. 배경 및 필요성</h2>
+  <div class="bg-surface rounded-xl border border-hairline-border p-6 flex flex-col gap-4 text-sm leading-relaxed">
+    <p>
+      2025년 개발자 채용 시장은 <b>수요-공급 불일치</b>가 두드러집니다.
+      사람인·점핏의 『2025 상반기 개발자 채용 리포트』(공고 10만여 건, 입사지원 260만여 건 분석)에 따르면
+      기업 공고는 5~10년차 경력직(39.7%)에 몰려 있고 신입 공고 비중은 0.8%에 불과한 반면,
+      입사지원은 신입이 29.5%로 가장 많아 <b>신입 개발자의 채용 미스매치가 구조적</b>입니다
+      <sup class="text-secondary">[2]</sup>.
+    </p>
+    <p>
+      자소설닷컴의 2025 상반기 트렌드 조사에서는 채용공고 조회수 7,224만 회(+15.7%),
+      자기소개서 작성 수 127만 건(+10.5%)으로 지원 활동량 자체가 증가했습니다
+      <sup class="text-secondary">[3]</sup>.
+      즉 지원자는 "더 많이" 쓰고 있지만, <b>CS 직무 연관성 기준으로 공고를 필터링하고
+      자소서·면접을 체계적으로 준비할 도구</b>의 필요성이 커지고 있습니다.
+    </p>
+    <p>
+      JobFilter는 이 문제를 겨냥한 컴퓨터공학과 특화 채용 포털로, ① CS 직무 키워드 기반 공고 자동 분류·매칭,
+      ② 규칙 기반 자소서 코칭("자소서는 내가 직접" — 생성형 AI 대신 문장 프레임·루브릭 제공),
+      ③ 결정론적 모의면접(표준 문항 풀 + 4대 구조 체크리스트)을 핵심 기능으로 설계되었습니다.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 2. 설계 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">2. 설계 및 제작 도구</h2>
+  <div class="grid md:grid-cols-2 gap-4 text-sm">
+    <div class="bg-surface rounded-xl border border-hairline-border p-6">
+      <h3 class="font-bold text-ink-charcoal mb-2">디자인 시스템 (DESIGN.md)</h3>
+      <ul class="list-disc pl-5 text-slate-muted space-y-1 leading-relaxed">
+        <li>Corporate/Modern SaaS 언어 — Linear·GitHub Insights 계열 고밀도 대시보드</li>
+        <li>색상: Deep Portal Navy(#14396B) · Match Green · Amber · Alert Red · Info Blue</li>
+        <li>타이포: Pretendard/Inter + JetBrains Mono(지표·ID·D-day 표기)</li>
+        <li>240px 고정 사이드바 + 56px 상단 바, 8pt 그리드 스페이싱</li>
+      </ul>
+    </div>
+    <div class="bg-surface rounded-xl border border-hairline-border p-6">
+      <h3 class="font-bold text-ink-charcoal mb-2">Google Stitch 활용</h3>
+      <ul class="list-disc pl-5 text-slate-muted space-y-1 leading-relaxed">
+        <li>Stitch는 Google Labs의 AI UI 생성 도구 — 자연어 프롬프트로 고충실도 화면+HTML/CSS 생성<sup class="text-secondary">[1]</sup></li>
+        <li>DESIGN.md를 디자인 시스템으로 업로드해 9개 화면에 일관된 테마 적용</li>
+        <li>화면당 구조·콘텐츠 프롬프트 입력(stitch-prompts.md), 색상 지시는 시스템이 처리</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 구현 아키텍처 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">3. 구현 — 공통 인터랙션 레이어</h2>
+  <div class="bg-surface rounded-xl border border-hairline-border p-6 text-sm leading-relaxed">
+    <p class="mb-4">
+      생성된 HTML을 재작성하지 않고 <code class="bg-surface-container px-1.5 py-0.5 rounded text-secondary">app.js</code>
+      하나로 전 화면의 동작을 구현하는 <b>프로그레시브 인핸스먼트</b> 방식을 채택했습니다.
+      프레임워크·빌드 없이 정적 호스팅만으로 동작합니다.
+    </p>
+    <div class="grid md:grid-cols-3 gap-3">
+      <div class="bg-paper-bg rounded-lg p-4">
+        <div class="font-semibold text-primary mb-1">① 페이지 디스패치</div>
+        <p class="text-slate-muted text-xs leading-relaxed">URL에서 화면 식별 → 화면별 init 함수 실행. 공통 내비·제네릭 규칙이 먼저 적용되고 화면별 로직이 덧붙음</p>
+      </div>
+      <div class="bg-paper-bg rounded-lg p-4">
+        <div class="font-semibold text-primary mb-1">② 텍스트 규칙 위임</div>
+        <p class="text-slate-muted text-xs leading-relaxed">문서 레벨 클릭 위임으로 버튼/링크 텍스트·아이콘을 규칙에 매핑 — 핸들러 없는 컨트롤에도 실동작 또는 피드백 부여</p>
+      </div>
+      <div class="bg-paper-bg rounded-lg p-4">
+        <div class="font-semibold text-primary mb-1">③ 브라우저 API 활용</div>
+        <p class="text-slate-muted text-xs leading-relaxed">FileReader(CSV 파싱), Blob 다운로드, Clipboard, localStorage(버전 스냅샷), HTML5 Drag&Drop, setInterval 타이머</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 화면별 구현 기능 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">4. 화면별 구현 기능</h2>
+  <div class="bg-surface rounded-xl border border-hairline-border overflow-hidden">
+    <table class="r w-full">
+      <thead><tr><th class="w-28">화면</th><th>구현된 인터랙션</th></tr></thead>
+      <tbody class="text-slate-muted">
+        <tr><td class="font-semibold text-primary">S-01 대시보드</td><td>사이드바 내비·검색창(Enter→S-02)·북마크 토글·업데이트 버튼·알림 피드백</td></tr>
+        <tr><td class="font-semibold text-primary">S-02 공고 목록</td><td>실시간 검색 필터·정렬 4종(매칭/마감/최신/스크랩)·필터 칩·초기화·페이지 크기+페이지네이션·최대 3개 비교 모달·스크랩</td></tr>
+        <tr><td class="font-semibold text-primary">S-03 공고 상세</td><td>스크랩 토글·공유(클립보드)·칸반 등록·원문 링크 피드백</td></tr>
+        <tr><td class="font-semibold text-primary">S-04 자소서 코칭</td><td>문항 탭별 본문 분리(localStorage)·툴바 포맷팅(굵게/기울임/목록/코드)·버전 스냅샷 저장·이력 패널 복원·PDF보내기·키워드 히트맵</td></tr>
+        <tr><td class="font-semibold text-primary">S-05 지원 칸반</td><td>카드 드래그앤드롭 6단계·건수 배지 갱신·신규 등록 모달(D-day 자동계산)·드로어 상태 변경·마감순 정렬·긴급 필터·삭제</td></tr>
+        <tr><td class="font-semibold text-primary">S-06 기업 공고</td><td>상태 탭 필터·카운트 재계산·검색/정렬·행별 마감/수정/검토요청/재등록/사유확인·단건 등록 모달·CSV 실파싱 일괄 미리보기·템플릿 다운로드</td></tr>
+        <tr><td class="font-semibold text-primary">S-07 관리자</td><td>승인/반려/일괄처리·키워드 사전 CRUD·업로드 로그·동기화 (인라인 스크립트 유지)</td></tr>
+        <tr><td class="font-semibold text-primary">S-08 모바일</td><td>검색 필터·정렬·스크랩 전용 보기·더 불러오기(카드 실제 추가)·하단 탭 바</td></tr>
+        <tr><td class="font-semibold text-primary">S-09 모의면접</td><td>직군 칩 선택·문항 풀 랜덤 교체·다음 문항 진행도·90초 카운트다운(일시정지/리셋)·답변 글자수·분량 판정·CSV보내기</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 5. 화면 갤러리 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">5. 화면 갤러리</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-01.png" target="_blank"><img src="S-01.png" alt="S-01 학생 대시보드" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-01 학생 대시보드</b> <span class="text-slate-muted">· 지원 현황 · 마감 임박 · 추천</span></figcaption>
+    </figure>
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-02.png" target="_blank"><img src="S-02.png" alt="S-02 공고 목록" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-02 공고 목록</b> <span class="text-slate-muted">· 검색/필터/정렬/비교</span></figcaption>
+    </figure>
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-03.png" target="_blank"><img src="S-03.png" alt="S-03 공고 상세" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-03 공고 상세</b> <span class="text-slate-muted">· 프로필 매칭 대조</span></figcaption>
+    </figure>
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-04.png" target="_blank"><img src="S-04.png" alt="S-04 자소서 코칭" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-04 자소서 코칭</b> <span class="text-slate-muted">· 진단/가이드/히트맵</span></figcaption>
+    </figure>
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-05.png" target="_blank"><img src="S-05.png" alt="S-05 지원 관리 칸반" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-05 지원 관리 칸반</b> <span class="text-slate-muted">· 드래그 6단계</span></figcaption>
+    </figure>
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-06.png" target="_blank"><img src="S-06.png" alt="S-06 기업 공고 관리" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-06 기업 공고 관리</b> <span class="text-slate-muted">· 등록/일괄업로드</span></figcaption>
+    </figure>
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-07.png" target="_blank"><img src="S-07.png" alt="S-07 관리자 대시보드" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-07 관리자 대시보드</b> <span class="text-slate-muted">· 승인/키워드/로그</span></figcaption>
+    </figure>
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-08.png" target="_blank"><img src="S-08.png" alt="S-08 모바일 뷰" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-08 모바일 뷰</b> <span class="text-slate-muted">· 하단 탭 바</span></figcaption>
+    </figure>
+    <figure class="fig bg-surface rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+      <a href="S-09.png" target="_blank"><img src="S-09.png" alt="S-09 규칙 기반 모의면접" class="w-full aspect-video object-cover object-top" loading="lazy"/></a>
+      <figcaption class="p-3 text-xs"><b class="text-primary">S-09 모의면접</b> <span class="text-slate-muted">· 타이머/체크리스트</span></figcaption>
+    </figure>
+  </div>
+  <p class="text-xs text-slate-muted mt-3">※ 썸네일은 Stitch 프로젝트 원본 스크린샷. 클릭하면 원본 크기로 열립니다.</p>
+</section>
+
+<!-- ============ 6. 검증 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">6. 검증 결과</h2>
+  <div class="bg-surface rounded-xl border border-hairline-border p-6 text-sm">
+    <p class="mb-4 text-slate-muted">Playwright로 로컬 및 라이브 환경에서 전수 검증했습니다. 각 화면의 모든 <code>&lt;a&gt;</code>/<code>&lt;button&gt;</code>에 대해 핸들러·위임 규칙 바인딩을 정적 감사하고, 핵심 동작은 실제 클릭/입력으로 확인했습니다.</p>
+    <table class="r w-full">
+      <thead><tr><th>검증 항목</th><th>방법</th><th>결과</th></tr></thead>
+      <tbody class="text-slate-muted">
+        <tr><td>콘솔 에러</td><td>9개 화면 로드 시 콘솔 감시</td><td class="text-match-green font-semibold">0건</td></tr>
+        <tr><td>무반응 컨트롤</td><td>전체 a/button 바인딩 감사</td><td class="text-match-green font-semibold">0건 (위임 규칙 커버)</td></tr>
+        <tr><td>검색 필터</td><td>S-02 "spring" 입력</td><td>6→3건 정확히 필터링</td></tr>
+        <tr><td>칸반 드래그</td><td>S-05 카드 컬럼 이동</td><td>이동 + 건수 배지 갱신</td></tr>
+        <tr><td>자소서 에디터</td><td>S-04 선택영역 볼드</td><td>**텍스트** 실제 삽입</td></tr>
+        <tr><td>면접 타이머</td><td>S-09 카운트다운</td><td>01:30→01:06 실감소 + 리셋</td></tr>
+        <tr><td>CSV 파싱</td><td>S-06 드롭존 파일 업로드</td><td>행 파싱→미리보기→분류</td></tr>
+        <tr><td>브랜딩 일관성</td><td>Stitch MCP로 S-09 원본 수정</td><td>CS CareerHub→JobFilter 통일</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 7. 배포 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">7. 배포</h2>
+  <div class="grid md:grid-cols-2 gap-4 text-sm">
+    <div class="bg-surface rounded-xl border border-hairline-border p-6">
+      <h3 class="font-bold text-ink-charcoal mb-2">GitHub</h3>
+      <p class="text-slate-muted">저장소 <code>zinemun1234/jobfilter-screens</code>에 정적 에셋 전체 커밋. <code>.vercel</code>/로컬 env는 gitignore 처리. 최신 커밋 <code>0812317</code>.</p>
+    </div>
+    <div class="bg-surface rounded-xl border border-hairline-border p-6">
+      <h3 class="font-bold text-ink-charcoal mb-2">Vercel</h3>
+      <p class="text-slate-muted">프레임워크 프리셋 충돌로 별도 정적 프로젝트로 배포 후 <code>jobfilter-screens.vercel.app</code>에 프로덕션 별칭 연결. 재배포 명령: <code>vercel deploy --prod --yes</code></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. 결론 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">8. 결론 및 한계</h2>
+  <div class="bg-surface rounded-xl border border-hairline-border p-6 text-sm leading-relaxed text-slate-muted">
+    <p class="mb-3">
+      <b class="text-ink-charcoal">결론:</b> Stitch 생성 화면의 디자인을 손상하지 않으면서 공통 스크립트 레이어만으로
+      60개 이상의 컨트롤을 실동작화했고, 전수 감사에서 무반응 요소 0건·콘솔 에러 0건을 달성했습니다.
+      규칙 기반 설계 철학(환각 없는 템플릿/루브릭)은 S-04·S-09 구현 방식과 일관되게 유지됩니다.
+    </p>
+    <p>
+      <b class="text-ink-charcoal">한계:</b> 정적 프로토타입이므로 데이터는 페이지 새로고침 시 초기화됩니다(버전 스냅샷만 localStorage 보존).
+      실제 서비스화 시 백엔드 API·인증·DB가 필요하며, 음성 녹음(STT)과 엑셀(.xlsx) 파싱은 브라우저 제약상 안내 메시지로 대체되었습니다.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 참고 문헌 ============ -->
+<section>
+  <h2 class="section text-xl font-bold text-primary mb-4">참고 자료</h2>
+  <ol class="text-sm text-slate-muted space-y-2 list-decimal pl-5 leading-relaxed">
+    <li>Google Labs. <i>"Introducing 'vibe design' with Stitch"</i>, Google Blog.
+      <a class="text-secondary" href="https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/">blog.google/…/stitch-ai-ui-design</a></li>
+    <li>사람인·점핏, 『2025 상반기 개발자 채용 리포트』 — 서버/백엔드 공고 16.2%, 신입 지원 29.5% vs 신입 공고 0.8%.
+      <a class="text-secondary" href="https://economist.co.kr/article/view/ecn202508270040">이코노미스트, 2025-08-27</a></li>
+    <li>자소설닷컴, 『2025 상반기 신입 채용 트렌드』 — 공고 조회 7,224만 회, 자소서 127만 건, 1인 평균 자격증 2.4개.
+      <a class="text-secondary" href="https://www.slist.kr/news/articleView.html?idxno=668171">싱글리스트</a></li>
+    <li>CoderPad &amp; CodinGame, <i>State of Tech Hiring 2025</i>.
+      <a class="text-secondary" href="https://coderpad.io/survey-reports/coderpad-and-codingame-state-of-tech-hiring-2025/">coderpad.io</a></li>
+    <li>Google Stitch 공식 문서/기능.
+      <a class="text-secondary" href="https://stitch.withgoogle.com/features">stitch.withgoogle.com/features</a></li>
+  </ol>
+</section>
+
+<footer class="text-center text-xs text-slate-muted pb-8">
+  JobFilter — 컴공 채용 포털 프로토타입 · 본 보고서는 정적 HTML로 작성되어 동일하게 배포됩니다.
+</footer>
+</main>
+</body></html>
